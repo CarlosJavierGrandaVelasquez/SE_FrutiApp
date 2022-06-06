@@ -11,6 +11,7 @@ import java.util.Scanner;
  */
 public class FruitApp {
     
+    
     public static void main(String[] args){
         int op2,id,age,cellphone,amount,amountVegetable,amountRegister,idRegister;
         double weight,cost,weightVegetable,costVegetable;
@@ -50,7 +51,7 @@ public class FruitApp {
                  id=entrada.nextInt();
                  System.out.println("Ingrese la edad de la persona que desea registrar:");
                  age=entrada.nextInt();
-                  System.out.println("Integrese el nombre que desea registrar:");
+                  System.out.println("Ingrese el nombre que desea registrar:");
                 nombre=entrada.next();
                 
                Client c2=new Client(nombre,id,age);
