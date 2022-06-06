@@ -47,11 +47,11 @@ public class FruitApp {
         switch(op2){
             case 1:
                 
-                System.out.println("Ingrese el id de la persona que desea registrar;");
+                System.out.println("Enter the id of the person you want to register:");
                  id=entrada.nextInt();
-                 System.out.println("Ingrese la edad de la persona que desea registrar:");
+                 System.out.println("Enter the age of the person you want to register:");
                  age=entrada.nextInt();
-                  System.out.println("Ingrese el nombre que desea registrar:");
+                  System.out.println("Enter the name you want to register:");
                 nombre=entrada.next();
                 
                Client c2=new Client(nombre,id,age);
