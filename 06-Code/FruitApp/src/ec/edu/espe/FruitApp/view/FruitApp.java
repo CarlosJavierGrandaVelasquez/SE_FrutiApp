@@ -1,21 +1,32 @@
 package ec.edu.espe.FruitApp.view;
+import com.mongodb.client.MongoCollection;
 import ec.edu.espe.FruitApp.model.Client;
+import ec.edu.espe.FruitApp.model.ConexionDB;
 import ec.edu.espe.FruitApp.model.Fruit;
 import ec.edu.espe.FruitApp.model.Register;
 import ec.edu.espe.FruitApp.model.Vegetable;
 import ec.edu.espe.FruitApp.model.Worker;
 import java.util.Scanner;
+import javax.swing.table.DefaultTableModel;
+import org.bson.Document;
 /**
  *
  *@author Carlos Granda,Ronny Ibarra,Jose Imbaquinga, DCCO-ESPE, Syntax Error
  */
 public class FruitApp {
-    
+     MongoCollection<Document> FruitCollection=new ConexionDB().ObtenerDB().getCollection("FruitCollection");
+     DefaultTableModel tabla = new DefaultTableModel(){
+         @Override
+         public boolean isCellEditable(int row, int column) {
+             return super.isCellEditable(row, column); //To change body of generated methods, choose Tools | Templates.
+         }
+         
+     };
     
     public static void main(String[] args){
+       Document data= new Document();
         int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,idRegister;
         double weight,cost,weightVegetable,costVegetable;
-        
         String nombre="";
         String email="";
         String nombreFruta="";
@@ -25,13 +36,9 @@ public class FruitApp {
         String nombreRegister="";
         String codeRegister="";
         
-               
-       Client c1=new Client();
-       
-       
-        
-        System.out.println("WELCOME TO THE 'DON MORALES' FRUIT STORE SYSTEM ");
-        System.out.println("Enter an option");
+        Client c1=new Client();
+       System.out.println("WELCOME TO THE 'DON MORALES' FRUIT STORE SYSTEM ");
+       System.out.println("Enter an option");
       Scanner entrada=new Scanner(System.in);
       
       
@@ -43,12 +50,15 @@ public class FruitApp {
          System.out.println("Option 5: Register payments:");
          System.out.println("Option 6: Exit the menu");
          System.out.println("Choose option: ");
-         op2=entrada.nextInt();
+         opcion2=entrada.nextInt();
         switch(opcion2){
             case 1:
                 
                 System.out.println("Enter the id of the person you want to register:");
                  id=entrada.nextInt();
+                 data.put("Name:",+id);
+                 FruitCollection.insertOne(id);
+                 
                  System.out.println("Enter the age of the person you want to register:");
                  age=entrada.nextInt();
                   System.out.println("Enter the name you want to register:");
