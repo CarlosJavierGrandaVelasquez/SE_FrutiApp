@@ -68,24 +68,24 @@ public class FruitApp {
                 
                 System.out.println("Enter the email:");
                     email=entrada.next();
-                System.out.println("Ingrese la edad de la persona que desea registrar:");
+                System.out.println("Enter the age of the person you want to register:");
                  cellphone=entrada.nextInt();
                Worker w2=new Worker(nombre,id,age,cellphone,email);
-                System.out.println("Las datos que va a ingresar son estos:"+w2);
+                System.out.println("The data to be entered is:"+w2);
                  break; 
             case 3:
-                System.out.println("Ingrese nombre de la fruta");
+                System.out.println("Enter fruit name");
                  nombreFruta=entrada.next();
-                 System.out.println("Ingrese el color de la fruta");
+                 System.out.println("Enter the color of the fruit");
                  color=entrada.next();
-                  System.out.println("Integrese la cantidad a vender");
+                  System.out.println("Enter the amount to sell");
                 amount=entrada.nextInt();
-                System.out.println("Integrese el peso de la fruta");
+                System.out.println("Enter the weight of the fruit");
                 weight=entrada.nextDouble();
-                System.out.println("Ingrese el costo de la fruta:");
+                System.out.println("Enter the cost of the fruit:");
                  cost=entrada.nextDouble();
                  Fruit F1=new Fruit(nombreFruta,color,amount,weight,cost);
-                System.out.println("Las datos que va a ingresar son estos:"+F1);
+                System.out.println("The data to be entered is:"+F1);
                 break;
             case 4:
                 System.out.println("Ingrese nombre de la  verdura");
