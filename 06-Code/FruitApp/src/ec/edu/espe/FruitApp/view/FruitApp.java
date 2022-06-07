@@ -88,31 +88,31 @@ public class FruitApp {
                 System.out.println("The data to be entered is:"+F1);
                 break;
             case 4:
-                System.out.println("Ingrese nombre de la  verdura");
+                System.out.println("Enter name of vegetable:");
                  nombreVegetable=entrada.next();
-                 System.out.println("Ingrese el color de la verdura");
+                 System.out.println("Enter the color of the vegetable:");
                  colorVegetable=entrada.next();
-                  System.out.println("Integrese la cantidad a vender");
+                  System.out.println("Enter the amount to sell:");
                 amountVegetable=entrada.nextInt();
-                System.out.println("Integrese el peso de la verdura");
+                System.out.println("Enter the weight of the vegetable:");
                 weightVegetable=entrada.nextDouble();
-                System.out.println("Ingrese el costo de la verdura:");
+                System.out.println("Enter the cost of the vegetable:");
                  costVegetable=entrada.nextDouble();
                 Vegetable V1=new Vegetable(nombreVegetable,colorVegetable,amountVegetable,weightVegetable,costVegetable);
-                System.out.println("Las datos de la verduras que van a ingresar:"+V1);
+                System.out.println("The data of the vegetables that are going to enter:"+V1);
                 break;
             case 5: 
-                System.out.println("Ingrese nombre de la persona trabajador a ser pagado:");
+                System.out.println("Enter the name of the worker to be paid:");
                  nombreRegister=entrada.next();
                  
-                 System.out.println("Ingrese codigo del trabajador:");
+                 System.out.println("Enter worker code:");
                  codeRegister=entrada.next();
-                 System.out.println("Ingrese el monto a pagar:");
+                 System.out.println("Enter the amount to pay:");
                  amountRegister=entrada.nextInt();
-                 System.out.println("Ingrese el id:");
+                 System.out.println("Enter the id:");
                  idRegister=entrada.nextInt();
                  Register R1=new Register(nombreRegister,codeRegister,amountRegister,idRegister);
-                 System.out.println("Las personas que va a pagar son: "+R1);
+                 System.out.println("The people who will pay are:"+R1);
                
                  
 
