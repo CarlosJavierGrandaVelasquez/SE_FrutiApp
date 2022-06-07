@@ -22,9 +22,9 @@ public class FruitApp {
      };
 
      public static void main(String[] args){
-         MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
+        MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
                  getCollection("FruitCollection");
-       Document data= new Document();
+        Document data= new Document();
         int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,
                 idRegister;
         double weight,cost,weightVegetable,costVegetable;
@@ -35,9 +35,9 @@ public class FruitApp {
         
         
         Client c1=new Client();
-       System.out.println("WELCOME TO THE 'DON MORALES' FRUIT STORE SYSTEM ");
-       System.out.println("Enter an option");
-      Scanner entrada=new Scanner(System.in);
+        System.out.println("WELCOME TO THE 'DON MORALES' FRUIT STORE SYSTEM ");
+        System.out.println("Enter an option");
+        Scanner entrada=new Scanner(System.in);
       
       
         
@@ -49,7 +49,7 @@ public class FruitApp {
          System.out.println("Option 6: Exit the menu");
          System.out.println("Choose option: ");
          opcion2=entrada.nextInt();
-        switch(opcion2){
+         switch(opcion2){
             case 1:
                 data.put("New Client","");
                 System.out.println("Enter the id of the "
@@ -65,6 +65,7 @@ public class FruitApp {
                 data.put("Name",name);
                 Client c2=new Client(name,id,age);
                 FruitCollection.insertOne(data);
+                System.out.println("The data to be entered is:"+c2);
                 break;
                 
             case 2:
@@ -87,6 +88,8 @@ public class FruitApp {
                         + "of the person you want to register:");
                 cellphone=entrada.nextInt();
                 data.put("Cellphone",+cellphone);
+                Worker W1=new Worker(name,id,age,cellphone,email);
+                System.out.println("The data to be entered is:"+W1);
                 FruitCollection.insertOne(data);
                  break; 
                  
