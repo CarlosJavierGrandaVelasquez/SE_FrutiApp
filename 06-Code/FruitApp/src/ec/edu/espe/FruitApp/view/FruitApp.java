@@ -91,47 +91,57 @@ public class FruitApp {
                  
             case 3:
                 System.out.println("Enter fruit name");
-                 nameFruit=entrada.next();
-                 data.put("Name Fruit: ", nameFruit);
-                 System.out.println("Enter the color of the fruit");
-                 color=entrada.next();
-                 data.put("Color;", color);
-                  System.out.println("Enter the amount to sell");
+                nameFruit=entrada.next();
+                data.put("Name Fruit: ", nameFruit);
+                System.out.println("Enter the color of the fruit");
+                color=entrada.next();
+                data.put("Color;", color);
+                System.out.println("Enter the amount to sell");
                 amount=entrada.nextInt();
                 data.put("Amount:",+amount);
                 System.out.println("Enter the weight of the fruit");
                 weight=entrada.nextDouble();
                 data.put("Weight", weight);
                 System.out.println("Enter the cost of the fruit:");
-                 cost=entrada.nextDouble();
-                 data.put("Cost",+cost);
-                 Fruit F1=new Fruit(nameFruit,color,amount,weight,cost);
+                cost=entrada.nextDouble();
+                data.put("Cost",+cost);
+                Fruit F1=new Fruit(nameFruit,color,amount,weight,cost);
                 System.out.println("The data to be entered is:"+F1);
                 FruitCollection.insertOne(data);
                 break;
             case 4:
                 System.out.println("Enter name of vegetable:");
-                 nombreVegetable=entrada.next();
-                 System.out.println("Enter the color of the vegetable:");
-                 colorVegetable=entrada.next();
-                  System.out.println("Enter the amount to sell:");
+                nameVegetable=entrada.next();
+                data.put("Name of Vegetable",nameVegetable);
+                System.out.println("Enter the color of the vegetable:");
+                colorVegetable=entrada.next();
+                data.put("Color of the Vegetable:",colorVegetable);
+                System.out.println("Enter the amount to sell:");
                 amountVegetable=entrada.nextInt();
+                data.put("Amount",+amountVegetable);
                 System.out.println("Enter the weight of the vegetable:");
                 weightVegetable=entrada.nextDouble();
+                data.put("Weigh Vegetable:",+weightVegetable);
                 System.out.println("Enter the cost of the vegetable:");
-                 costVegetable=entrada.nextDouble();
-                Vegetable V1=new Vegetable(nombreVegetable,
-                        colorVegetable,amountVegetable,weightVegetable,costVegetable);
-                System.out.println("The data of the vegetables that are going to enter:"+V1);
+                costVegetable=entrada.nextDouble();
+                data.put("Costo Vegetable",+costVegetable);
+                Vegetable V1=new Vegetable(nameVegetable,
+                        colorVegetable,amountVegetable,
+                        weightVegetable,costVegetable);
+                System.out.println("The data of the vegetables that are"
+                        + " going to enter:"+V1);
+                FruitCollection.insertOne(data);
                 break;
             case 5: 
                 System.out.println("Enter the name of the worker to be paid:");
-                 nombreRegister=entrada.next();
-                 
+                 nameRegister=entrada.next();
+                 data.put("Name Register:",nameRegister);
                  System.out.println("Enter worker code:");
                  codeRegister=entrada.next();
+                 data.put("Code Register",codeRegister);
                  System.out.println("Enter the amount to pay:");
                  amountRegister=entrada.nextInt();
+                 
                  System.out.println("Enter the id:");
                  idRegister=entrada.nextInt();
                  Register R1=new Register(nombreRegister,codeRegister,
