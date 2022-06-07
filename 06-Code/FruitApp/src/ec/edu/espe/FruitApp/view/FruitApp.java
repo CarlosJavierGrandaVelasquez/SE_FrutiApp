@@ -14,20 +14,19 @@ import org.bson.Document;
  *@author Carlos Granda,Ronny Ibarra,Jose Imbaquinga, DCCO-ESPE, Syntax Error
  */
 public class FruitApp {
-     MongoCollection<Document> FruitCollection=new ConexionDB().ObtenerDB().getCollection("FruitCollection");
      DefaultTableModel tabla = new DefaultTableModel(){
          @Override
          public boolean isCellEditable(int row, int column) {
              return super.isCellEditable(row, column); //To change body of generated methods, choose Tools | Templates.
          }
-         
      };
-    
-    public static void main(String[] args){
+
+     public static void main(String[] args){
+         MongoCollection<Document> fruitcollection = new ConexionDB().ObtenerDB().getCollection("fruitcollection");
        Document data= new Document();
         int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,idRegister;
         double weight,cost,weightVegetable,costVegetable;
-        String nombre="";
+        String name="";
         String email="";
         String nombreFruta="";
         String color="";
@@ -35,6 +34,7 @@ public class FruitApp {
         String nombreVegetable="";
         String nombreRegister="";
         String codeRegister="";
+        
         
         Client c1=new Client();
        System.out.println("WELCOME TO THE 'DON MORALES' FRUIT STORE SYSTEM ");
@@ -56,31 +56,33 @@ public class FruitApp {
                 
                 System.out.println("Enter the id of the person you want to register:");
                  id=entrada.nextInt();
-                 data.put("Name:",+id);
-                 FruitCollection.insertOne(id);
-                 
+                 data.put("Id:",+id);
                  System.out.println("Enter the age of the person you want to register:");
                  age=entrada.nextInt();
+                 //data.put("Age:",+age);
                   System.out.println("Enter the name you want to register:");
-                nombre=entrada.next();
+                name=entrada.next();
+               // data.put("Name",name);
                 
-               Client c2=new Client(nombre,id,age);
+               Client c2=new Client(name,id,age);
                 System.out.println("The data to be entered is these:"+c2);
                 
+                 fruitcollection.insertOne(data);
                 break;
+                
             case 2:
                 System.out.println("Enter the id of the person you want to register:");
                  id=entrada.nextInt();
                  System.out.println("Enter the age of the person you want to register:");
                  age=entrada.nextInt();
                   System.out.println("Enter the name you want to register:");
-                nombre=entrada.next();
+                name=entrada.next();
                 
                 System.out.println("Enter the email:");
                     email=entrada.next();
                 System.out.println("Enter the age of the person you want to register:");
                  cellphone=entrada.nextInt();
-               Worker w2=new Worker(nombre,id,age,cellphone,email);
+               Worker w2=new Worker(name,id,age,cellphone,email);
                 System.out.println("The data to be entered is:"+w2);
                  break; 
             case 3:
