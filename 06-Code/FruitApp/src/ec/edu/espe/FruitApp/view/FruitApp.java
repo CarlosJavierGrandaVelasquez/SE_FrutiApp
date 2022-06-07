@@ -121,10 +121,10 @@ public class FruitApp {
                 data.put("Amount",+amountVegetable);
                 System.out.println("Enter the weight of the vegetable:");
                 weightVegetable=entrada.nextDouble();
-                data.put("Weigh Vegetable:",+weightVegetable);
+                data.put("Weigh :",+weightVegetable);
                 System.out.println("Enter the cost of the vegetable:");
                 costVegetable=entrada.nextDouble();
-                data.put("Costo Vegetable",+costVegetable);
+                data.put("Costo; ",+costVegetable);
                 Vegetable V1=new Vegetable(nameVegetable,
                         colorVegetable,amountVegetable,
                         weightVegetable,costVegetable);
@@ -134,22 +134,21 @@ public class FruitApp {
                 break;
             case 5: 
                 System.out.println("Enter the name of the worker to be paid:");
-                 nameRegister=entrada.next();
-                 data.put("Name Register:",nameRegister);
-                 System.out.println("Enter worker code:");
-                 codeRegister=entrada.next();
-                 data.put("Code Register",codeRegister);
-                 System.out.println("Enter the amount to pay:");
-                 amountRegister=entrada.nextInt();
-                 
-                 System.out.println("Enter the id:");
-                 idRegister=entrada.nextInt();
-                 Register R1=new Register(nombreRegister,codeRegister,
+                nameRegister=entrada.next();
+                data.put("Name :",nameRegister);
+                System.out.println("Enter worker code:");
+                codeRegister=entrada.next();
+                data.put("Code ",codeRegister);
+                System.out.println("Enter the amount to pay:");
+                amountRegister=entrada.nextInt();
+                data.put("Amount: ",amountRegister);
+                System.out.println("Enter the id:");
+                idRegister=entrada.nextInt();
+                data.put("Id:",+idRegister);
+                Register R1=new Register(nameRegister,codeRegister,
                          amountRegister,idRegister);
-                 System.out.println("The people who will pay are:"+R1);
-               
-                 
-
+                System.out.println("The people who will pay are:"+R1);
+                FruitCollection.insertOne(data);
                 break;
             case 6:
                 break;
