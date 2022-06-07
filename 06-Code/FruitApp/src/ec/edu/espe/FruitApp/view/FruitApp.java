@@ -17,23 +17,21 @@ public class FruitApp {
      DefaultTableModel tabla = new DefaultTableModel(){
          @Override
          public boolean isCellEditable(int row, int column) {
-             return super.isCellEditable(row, column); //To change body of generated methods, choose Tools | Templates.
+             return super.isCellEditable(row, column);
          }
      };
 
      public static void main(String[] args){
-         MongoCollection<Document> FruitCollection = new ConexionDB().ObtenerDB().getCollection("FruitCollection");
+         MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
+                 getCollection("FruitCollection");
        Document data= new Document();
-        int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,idRegister;
+        int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,
+                idRegister;
         double weight,cost,weightVegetable,costVegetable;
-        String name="";
-        String email="";
-        String nombreFruta="";
-        String color="";
-        String colorVegetable="";
-        String nombreVegetable="";
-        String nombreRegister="";
-        String codeRegister="";
+        String name,email,color,colorVegetable,nameVegetable,
+                nameRegister,codeRegister,nameFruit;
+       
+       
         
         
         Client c1=new Client();
@@ -54,50 +52,62 @@ public class FruitApp {
         switch(opcion2){
             case 1:
                 
-                System.out.println("Enter the id of the person you want to register:");
-                 id=entrada.nextInt();
-                 data.put("Id:",+id);
-                 System.out.println("Enter the age of the person you want to register:");
-                 age=entrada.nextInt();
-                 data.put("Age:",+age);
-                  System.out.println("Enter the name you want to register:");
+                System.out.println("Enter the id of the "
+                        + "person you want to register:");
+                id=entrada.nextInt();
+                data.put("Id:",+id);
+                System.out.println("Enter the age of the person you "
+                        + "want to register:");
+                age=entrada.nextInt();
+                data.put("Age:",+age);
+                System.out.println("Enter the name you want to register:");
                 name=entrada.next();
-               data.put("Name",name);
-                
-               Client c2=new Client(name,id,age);
-                
-                
-                 FruitCollection.insertOne(data);
+                data.put("Name",name);
+                Client c2=new Client(name,id,age);
+                FruitCollection.insertOne(data);
                 break;
                 
             case 2:
-                System.out.println("Enter the id of the person you want to register:");
-                 id=entrada.nextInt();
-                 System.out.println("Enter the age of the person you want to register:");
-                 age=entrada.nextInt();
-                  System.out.println("Enter the name you want to register:");
+                System.out.println("Enter the id of "
+                        + "the person you want to register:");
+                id=entrada.nextInt();
+                data.put("Id:",+id);
+                System.out.println("Enter the age of the "
+                        + "person you want to register:");
+                age=entrada.nextInt();
+                data.put("Age",+age);
+                System.out.println("Enter the name you want to register:");
                 name=entrada.next();
-                
+                data.put("Name",name);
                 System.out.println("Enter the email:");
-                    email=entrada.next();
-                System.out.println("Enter the age of the person you want to register:");
-                 cellphone=entrada.nextInt();
-               Worker w2=new Worker(name,id,age,cellphone,email);
-                System.out.println("The data to be entered is:"+w2);
+                email=entrada.next();
+                data.put("E-mail:",email);
+                System.out.println("Enter the cellphone "
+                        + "of the person you want to register:");
+                cellphone=entrada.nextInt();
+                data.put("Cellphone",+cellphone);
+                FruitCollection.insertOne(data);
                  break; 
+                 
             case 3:
                 System.out.println("Enter fruit name");
-                 nombreFruta=entrada.next();
+                 nameFruit=entrada.next();
+                 data.put("Name Fruit: ", nameFruit);
                  System.out.println("Enter the color of the fruit");
                  color=entrada.next();
+                 data.put("Color;", color);
                   System.out.println("Enter the amount to sell");
                 amount=entrada.nextInt();
+                data.put("Amount:",+amount);
                 System.out.println("Enter the weight of the fruit");
                 weight=entrada.nextDouble();
+                data.put("Weight", weight);
                 System.out.println("Enter the cost of the fruit:");
                  cost=entrada.nextDouble();
-                 Fruit F1=new Fruit(nombreFruta,color,amount,weight,cost);
+                 data.put("Cost",+cost);
+                 Fruit F1=new Fruit(nameFruit,color,amount,weight,cost);
                 System.out.println("The data to be entered is:"+F1);
+                FruitCollection.insertOne(data);
                 break;
             case 4:
                 System.out.println("Enter name of vegetable:");
@@ -110,7 +120,8 @@ public class FruitApp {
                 weightVegetable=entrada.nextDouble();
                 System.out.println("Enter the cost of the vegetable:");
                  costVegetable=entrada.nextDouble();
-                Vegetable V1=new Vegetable(nombreVegetable,colorVegetable,amountVegetable,weightVegetable,costVegetable);
+                Vegetable V1=new Vegetable(nombreVegetable,
+                        colorVegetable,amountVegetable,weightVegetable,costVegetable);
                 System.out.println("The data of the vegetables that are going to enter:"+V1);
                 break;
             case 5: 
@@ -123,7 +134,8 @@ public class FruitApp {
                  amountRegister=entrada.nextInt();
                  System.out.println("Enter the id:");
                  idRegister=entrada.nextInt();
-                 Register R1=new Register(nombreRegister,codeRegister,amountRegister,idRegister);
+                 Register R1=new Register(nombreRegister,codeRegister,
+                         amountRegister,idRegister);
                  System.out.println("The people who will pay are:"+R1);
                
                  
