@@ -120,7 +120,7 @@ public class FruitApp {
             case 6:
                 break;
             default : 
-                   System.out.println("La opcion no existe");
+                   System.out.println("The option does not exist");
                    break;
 
                    
