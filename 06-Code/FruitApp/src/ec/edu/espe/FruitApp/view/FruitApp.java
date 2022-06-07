@@ -51,7 +51,7 @@ public class FruitApp {
          opcion2=entrada.nextInt();
         switch(opcion2){
             case 1:
-                
+                data.put("New Client","");
                 System.out.println("Enter the id of the "
                         + "person you want to register:");
                 id=entrada.nextInt();
@@ -68,6 +68,7 @@ public class FruitApp {
                 break;
                 
             case 2:
+                data.put("Register a worker:","");
                 System.out.println("Enter the id of "
                         + "the person you want to register:");
                 id=entrada.nextInt();
@@ -90,12 +91,13 @@ public class FruitApp {
                  break; 
                  
             case 3:
+                data.put("Fruit","");
                 System.out.println("Enter fruit name");
                 nameFruit=entrada.next();
-                data.put("Name Fruit: ", nameFruit);
+                data.put("Name: ", nameFruit);
                 System.out.println("Enter the color of the fruit");
                 color=entrada.next();
-                data.put("Color;", color);
+                data.put("Color:", color);
                 System.out.println("Enter the amount to sell");
                 amount=entrada.nextInt();
                 data.put("Amount:",+amount);
@@ -110,12 +112,13 @@ public class FruitApp {
                 FruitCollection.insertOne(data);
                 break;
             case 4:
+                data.put("Vegetable", "");
                 System.out.println("Enter name of vegetable:");
                 nameVegetable=entrada.next();
-                data.put("Name of Vegetable",nameVegetable);
+                data.put("Name:",nameVegetable);
                 System.out.println("Enter the color of the vegetable:");
                 colorVegetable=entrada.next();
-                data.put("Color of the Vegetable:",colorVegetable);
+                data.put("Color:",colorVegetable);
                 System.out.println("Enter the amount to sell:");
                 amountVegetable=entrada.nextInt();
                 data.put("Amount",+amountVegetable);
@@ -133,6 +136,7 @@ public class FruitApp {
                 FruitCollection.insertOne(data);
                 break;
             case 5: 
+                data.put("Payments:","");
                 System.out.println("Enter the name of the worker to be paid:");
                 nameRegister=entrada.next();
                 data.put("Name :",nameRegister);
