@@ -13,7 +13,7 @@ public class FruitApp {
     
     
     public static void main(String[] args){
-        int op2,id,age,cellphone,amount,amountVegetable,amountRegister,idRegister;
+        int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,idRegister;
         double weight,cost,weightVegetable,costVegetable;
         
         String nombre="";
@@ -31,20 +31,20 @@ public class FruitApp {
        
         
         System.out.println("WELCOME TO THE 'DON MORALES' FRUIT STORE SYSTEM ");
-        System.out.println("Ingrese una opcion");
+        System.out.println("Enter an option");
       Scanner entrada=new Scanner(System.in);
       
       
         
-         System.out.println("Opcion 1: Registrarse un nuevo cliente:");
-         System.out.println("Opcion 2: Registrar a un trabajador:");
-         System.out.println("Opcion 3: Registrar la venta de una fruta:");
-         System.out.println("Opcion 4: Registrar la venta de una verduda:");
-         System.out.println("Opcion 5: Registrar pagos: ");
-         System.out.println("Opcion 6: Salir del menu");
-         System.out.println("Elija opcion: ");
+         System.out.println("Option 1: Register a new client:");
+         System.out.println("Option 2: Register a worker:");
+         System.out.println("Option 3: Register the sale of a fruit:");
+         System.out.println("Option 4: Record the sale of a vegetable:");
+         System.out.println("Option 5: Register payments:");
+         System.out.println("Option 6: Exit the menu");
+         System.out.println("Choose option: ");
          op2=entrada.nextInt();
-        switch(op2){
+        switch(opcion2){
             case 1:
                 
                 System.out.println("Enter the id of the person you want to register:");
@@ -55,18 +55,18 @@ public class FruitApp {
                 nombre=entrada.next();
                 
                Client c2=new Client(nombre,id,age);
-                System.out.println("Las datos que va a ingresar son estos:"+c2);
+                System.out.println("The data to be entered is these:"+c2);
                 
                 break;
             case 2:
-                System.out.println("Ingrese el id de la persona que desea registrar;");
+                System.out.println("Enter the id of the person you want to register:");
                  id=entrada.nextInt();
-                 System.out.println("Ingrese la edad de la persona que desea registrar:");
+                 System.out.println("Enter the age of the person you want to register:");
                  age=entrada.nextInt();
-                  System.out.println("Integrese el nombre que desea registrar:");
+                  System.out.println("Enter the name you want to register:");
                 nombre=entrada.next();
                 
-                System.out.println("Integrese el email:");
+                System.out.println("Enter the email:");
                     email=entrada.next();
                 System.out.println("Ingrese la edad de la persona que desea registrar:");
                  cellphone=entrada.nextInt();
