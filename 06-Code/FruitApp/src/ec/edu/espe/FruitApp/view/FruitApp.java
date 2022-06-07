@@ -22,7 +22,7 @@ public class FruitApp {
      };
 
      public static void main(String[] args){
-         MongoCollection<Document> fruitcollection = new ConexionDB().ObtenerDB().getCollection("fruitcollection");
+         MongoCollection<Document> FruitCollection = new ConexionDB().ObtenerDB().getCollection("FruitCollection");
        Document data= new Document();
         int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,idRegister;
         double weight,cost,weightVegetable,costVegetable;
@@ -59,15 +59,15 @@ public class FruitApp {
                  data.put("Id:",+id);
                  System.out.println("Enter the age of the person you want to register:");
                  age=entrada.nextInt();
-                 //data.put("Age:",+age);
+                 data.put("Age:",+age);
                   System.out.println("Enter the name you want to register:");
                 name=entrada.next();
-               // data.put("Name",name);
+               data.put("Name",name);
                 
                Client c2=new Client(name,id,age);
-                System.out.println("The data to be entered is these:"+c2);
                 
-                 fruitcollection.insertOne(data);
+                
+                 FruitCollection.insertOne(data);
                 break;
                 
             case 2:
