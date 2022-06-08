@@ -50,7 +50,7 @@ public class FruitApp {
          System.out.println("Choose option: ");
          opcion2=entrada.nextInt();
          switch(opcion2){
-            case 1:
+             case 1:
                 data.put("New Client","");
                 System.out.println("Enter the id of the "
                         + "person you want to register:");
