@@ -57,7 +57,7 @@ public class FruitApp {
                 name=entrada.next();
                 data.put("Name",name);
                 Client c2=new Client(name,id,age);
-                FruitCollection.insertOne(data);
+        
                 System.out.println("The data to be entered is:"+c2);
                 break;
                 
@@ -83,7 +83,7 @@ public class FruitApp {
                 data.put("Cellphone",+cellphone);
                 Worker W1=new Worker(name,id,age,cellphone,email);
                 System.out.println("The data to be entered is:"+W1);
-                FruitCollection.insertOne(data);
+               
                  break; 
                  
             case 3:
@@ -105,7 +105,7 @@ public class FruitApp {
                 data.put("Cost",+cost);
                 Fruit F1=new Fruit(nameFruit,color,amount,weight,cost);
                 System.out.println("The data to be entered is:"+F1);
-                FruitCollection.insertOne(data);
+              
                 break;
             case 4:
                 data.put("Vegetable", "");
@@ -129,7 +129,7 @@ public class FruitApp {
                         weightVegetable,costVegetable);
                 System.out.println("The data of the vegetables that are"
                         + " going to enter:"+V1);
-                FruitCollection.insertOne(data);
+           
                 break;
             case 5: 
                 data.put("Payments:","");
@@ -148,7 +148,7 @@ public class FruitApp {
                 Register R1=new Register(nameRegister,codeRegister,
                          amountRegister,idRegister);
                 System.out.println("The people who will pay are:"+R1);
-                FruitCollection.insertOne(data);
+             
                 break;
             case 6:
                 break;
