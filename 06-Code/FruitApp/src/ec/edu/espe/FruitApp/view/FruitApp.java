@@ -14,17 +14,10 @@ import org.bson.Document;
  *@author Carlos Granda,Ronny Ibarra,Jose Imbaquinga, DCCO-ESPE, Syntax Error
  */
 public class FruitApp {
-     DefaultTableModel tabla = new DefaultTableModel(){
-         @Override
-         public boolean isCellEditable(int row, int column) {
-             return super.isCellEditable(row, column);
-         }
-     };
+     
 
      public static void main(String[] args){
-        MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
-                 getCollection("FruitCollection");
-        Document data= new Document();
+      
         int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,
                 idRegister;
         double weight,cost,weightVegetable,costVegetable;
