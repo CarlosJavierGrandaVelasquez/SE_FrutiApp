@@ -22,10 +22,10 @@ public class FruitApp {
 
      public static void main(String[] args){
       
-        int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,
+       int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,
                 idRegister;
-        double weight,cost,weightVegetable,costVegetable;
-        String name,email,color,colorVegetable,nameVegetable,
+       double weight,cost,weightVegetable,costVegetable;
+       String name,email,color,colorVegetable,nameVegetable,
                 nameRegister,codeRegister,nameFruit;
        
         File fileC = new File("./NewClient.csv");
@@ -52,7 +52,7 @@ public class FruitApp {
                 id=entrada.nextInt();
                 System.out.println("Enter the age of the person you "
                         + "want to register:");
-                age=entrada.nextInt();
+                ge=entrada.nextInt();
                 System.out.println("Enter the name you want to register:");
                 name=entrada.next();
                 Client c2=new Client(name,id,age);
@@ -60,8 +60,9 @@ public class FruitApp {
                 try (FileWriter fileWc = new FileWriter(fileC,true);
                         FileWriter fileWp = new FileWriter(fileC,true);){
                         fileWc.write(c2.toString()+"\n");
-                    }catch(Exception e){
-                        System.out.println("An error has occurred");
+                    }
+                   catch(Exception e){
+                   System.out.println("An error has occurred");
                     }
                   break;
                     
@@ -84,8 +85,9 @@ public class FruitApp {
                try (FileWriter fileWc = new FileWriter(fileW,true);
                         FileWriter fileWp = new FileWriter(fileW,true);){
                         fileWc.write(W1.toString()+"\n");
-                    }catch(Exception e){
-                        System.out.println("An error has occurred");
+                    }
+                   catch(Exception e){
+                    System.out.println("An error has occurred");
                     }
                   break;
                  
@@ -106,8 +108,9 @@ public class FruitApp {
                 try (FileWriter fileWc = new FileWriter(fileF,true);
                             FileWriter fileWp = new FileWriter(fileF,true);){
                         fileWc.write(F1.toString()+"\n");
-                    }catch(Exception e){
-                        System.out.println("An error has occurred");
+                    }
+                   catch(Exception e){
+                   System.out.println("An error has occurred");
                     }
                 break;
             case 4:
