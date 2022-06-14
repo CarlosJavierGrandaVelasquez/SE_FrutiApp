@@ -132,33 +132,35 @@ public class FruitApp {
                 try (FileWriter fileWc = new FileWriter(fileV,true);
                         FileWriter fileWp = new FileWriter(fileV,true);){
                         fileWc.write(V1.toString()+"\n");
-                    }catch(Exception e){
-                        System.out.println("An error has occurred");
+                    }
+                   catch(Exception e){
+                   system.out.println("An error has occurred");
                     }
                 break;
             case 5: 
-                System.out.println("Enter the frist last name of the worker to be paid:");
-                nameRegister=entrada.next();
-                System.out.println("Enter worker code:");
-                codeRegister=entrada.next();
-                System.out.println("Enter the amount to pay:");
-                amountRegister=entrada.nextInt();
-                System.out.println("Enter the id:");
-                idRegister=entrada.nextInt();
-                Register R1=new Register(nameRegister,codeRegister,
-                         amountRegister,idRegister);
-                System.out.println("The people who will pay are:"+R1);
-                try (FileWriter fileWc = new FileWriter(fileP,true);
-                        FileWriter fileWp = new FileWriter(fileP,true);){
-                        fileWc.write(R1.toString()+"\n");
-                    }catch(Exception e){
-                        System.out.println("An error has occurred");
+              System.out.println("Enter the frist last name of the worker to be paid:");
+              nameRegister=entrada.next();
+              System.out.println("Enter worker code:");
+              codeRegister=entrada.next();
+              System.out.println("Enter the amount to pay:");
+              amountRegister=entrada.nextInt();
+              System.out.println("Enter the id:");
+              idRegister=entrada.nextInt();
+              Register R1=new Register(nameRegister,codeRegister,
+                       amountRegister,idRegister);
+               System.out.println("The people who will pay are:"+R1);
+               try (FileWriter fileWc = new FileWriter(fileP,true);
+                       FileWriter fileWp = new FileWriter(fileP,true);){
+                       fileWc.write(R1.toString()+"\n");
+                    }
+                   catch(Exception e){
+                    System.out.println("An error has occurred");
                     }
                 break;
             case 6:
                 break;
             default : 
-                   System.out.println("The option does not exist");
+                System.out.println("The option does not exist");
                    break;
 
                    
