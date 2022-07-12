@@ -20,7 +20,7 @@ import java.io.FileWriter;
 public class FruitApp {
      
 
-    public static void main(String[] args){
+  public static void main(String[] args){
       
       int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,
                idRegister;
