@@ -20,49 +20,49 @@ import java.io.FileWriter;
 public class FruitApp {
      
 
-     public static void main(String[] args){
+    public static void main(String[] args){
       
-       int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,
-                idRegister;
-       double weight,cost,weightVegetable,costVegetable;
-       String name,email,color,colorVegetable,nameVegetable,
-                nameRegister,codeRegister,nameFruit;
+      int opcion2,id,age,cellphone,amount,amountVegetable,amountRegister,
+               idRegister;
+      double weight,cost,weightVegetable,costVegetable;
+      String name,email,color,colorVegetable,nameVegetable,
+               nameRegister,codeRegister,nameFruit;
        
-        File fileC = new File("./NewClient.csv");
-        File fileW = new File("./Worker.csv");
-        File fileF = new File("./Fruit.csv");
-        File fileV = new File("./Vegetable.csv");
-        File fileP = new File("./Payments.csv");
-        Client c1=new Client();
-        System.out.println("WELCOME TO THE 'DON MORALES' FRUIT STORE SYSTEM ");
-        System.out.println("Enter an option");
-        Scanner entrada=new Scanner(System.in);
-         System.out.println("Option 1: Register a new client:");
-         System.out.println("Option 2: Register a worker:");
-         System.out.println("Option 3: Register the sale of a fruit:");
-         System.out.println("Option 4: Record the sale of a vegetable:");
-         System.out.println("Option 5: Register payments:");
-         System.out.println("Option 6: Exit the menu");
-         System.out.println("Choose option: ");
-         opcion2=entrada.nextInt();
-         switch(opcion2){
-             case 1:
-                System.out.println("Enter the id of the "
+       File fileC = new File("./NewClient.csv");
+       File fileW = new File("./Worker.csv");
+       File fileF = new File("./Fruit.csv");
+       File fileV = new File("./Vegetable.csv");
+       File fileP = new File("./Payments.csv");
+       Client c1=new Client();
+       System.out.println("WELCOME TO THE 'DON MORALES' FRUIT STORE SYSTEM ");
+       System.out.println("Enter an option");
+       Scanner entrada=new Scanner(System.in);
+       System.out.println("Option 1: Register a new client:");
+       System.out.println("Option 2: Register a worker:");
+       System.out.println("Option 3: Register the sale of a fruit:");
+       System.out.println("Option 4: Record the sale of a vegetable:");
+       System.out.println("Option 5: Register payments:");
+       System.out.println("Option 6: Exit the menu");
+       System.out.println("Choose option: ");
+        opcion2=entrada.nextInt();
+       switch(opcion2){
+            case 1:
+               System.out.println("Enter the id of the "
                         + "person you want to register:");
-                id=entrada.nextInt();
-                System.out.println("Enter the age of the person you "
+               id=entrada.nextInt();
+               System.out.println("Enter the age of the person you "
                         + "want to register:");
-                ge=entrada.nextInt();
-                System.out.println("Enter the name you want to register:");
-                name=entrada.next();
-                Client c2=new Client(name,id,age);
-                System.out.println("The data to be entered is:"+c2);
-                try (FileWriter fileWc = new FileWriter(fileC,true);
+               ge=entrada.nextInt();
+               System.out.println("Enter the name you want to register:");
+               name=entrada.next();
+               Client c2=new Client(name,id,age);
+               System.out.println("The data to be entered is:"+c2);
+               try (FileWriter fileWc = new FileWriter(fileC,true);
                         FileWriter fileWp = new FileWriter(fileC,true);){
                         fileWc.write(c2.toString()+"\n");
                     }
-                   catch(Exception e){
-                   System.out.println("An error has occurred");
+                catch(Exception e){
+                system.out.println("An error has occurred");
                     }
                   break;
                     
