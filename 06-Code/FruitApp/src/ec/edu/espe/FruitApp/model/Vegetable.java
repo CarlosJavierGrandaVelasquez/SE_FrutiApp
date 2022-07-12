@@ -1,70 +1,69 @@
-package ec.edu.espe.FruitApp.model;
+package ec.edu.espe.fruitApp.model;
 
 /**
  *
- * @author Carlos Granda,Ronny Ibarra,Jose Imbaquinga, DCCO-ESPE, Syntax Error
+ * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class Vegetable {
-   private String name;
-   private String color;
-   private int amount;
-   private double weight;
-   private double cost;
+    
+    private String name;
+    private String texture;
+    private int quantity;
+    private double weight;
+    private float cost;
 
-   public Vegetable() {
-   }
+    public Vegetable(String name, String texture, int quantity, double weight, float cost) {
+        this.name = name;
+        this.texture = texture;
+        this.quantity = quantity;
+        this.weight = weight;
+        this.cost = cost;
+    }
 
-   public Vegetable(String name, String color, int amount, double weight, double cost) {
-       this.name = name;
-       this.color = color;
-       this.amount = amount;
-       this.weight = weight;
-       this.cost = cost;
-   }
+    public Vegetable() {
+    }
 
-   public String getName() {
-       return name;
-   }
+    public String getName() {
+        return name;
+    }
 
-   public void setName(String name) {
-       this.name = name;
-   }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-   public String getColor() {
-       return color;
-   }
+    public String getTexture() {
+        return texture;
+    }
 
-   public void setColor(String color) {
-       this.color = color;
-   }
+    public void setTexture(String texture) {
+        this.texture = texture;
+    }
 
-   public int getAmount() {
-       return amount;
-   }
+    public int getQuantity() {
+        return quantity;
+    }
 
-   public void setAmount(int amount) {
-       this.amount = amount;
-   }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-   public double getWeight() {
-       return weight;
-  }
+    public double getWeight() {
+        return weight;
+    }
 
-  public void setWeight(float weight) {
-      this.weight = weight;
-   }
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
 
-   public double getCost() {
-       return cost;
-   }
+    public float getCost() {
+        return cost;
+    }
 
-   public void setCost(float cost) {
-       this.cost = cost;
-   }
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
 
-   @Override
-   public String toString() {
-       return "Vegetable{" + "name=" + name + ", color=" + color + ", amount=" + amount + ", weight=" + weight + ", cost=" + cost + '}';
-   }
+    
+    
     
 }

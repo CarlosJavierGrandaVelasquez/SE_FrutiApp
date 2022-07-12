@@ -1,70 +1,94 @@
-package ec.edu.espe.FruitApp.model;
+package ec.edu.espe.fruitApp.model;
 
 /**
  *
- * @author Carlos Granda,Ronny Ibarra,Jose Imbaquinga, DCCO-ESPE, Syntax Error
+ * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class Fruit {
-   private String name;
-   private String color;
-   private int amount;
-   private double weight;
-   private double cost;
+    
+    private String name;
+    private String texture;
+    private int quantity;
+    private double weight;
+    private float cost;
 
-   public Fruit() {
-    }
-
-   public Fruit(String name, String color, int amount, double weight, double cost) {
-       this.name = name;
-       this.color = color;
-       this.amount = amount;
-       this.weight = weight;
-       this.cost = cost;
+    public Fruit(String name, String texture, int quantity, double weight, float cost) {
+        this.name = name;
+        this.texture = texture;
+        this.quantity = quantity;
+        this.weight = weight;
+        this.cost = cost;
     }
     
-    @Override
-   public String toString() {
-       return "Fruit{" + "name=" + name + ", color=" + color + ", amount=" + amount + ", weight=" + weight + ", cost=" + cost + '}';
-    }
-    
-   public String getName() {
-       return name;
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
     }
 
-   public void setName(String name) {
-       this.name = name;
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
-   public String getColor() {
-       return color;
+    /**
+     * @return the texture
+     */
+    public String getTexture() {
+        return texture;
     }
 
-   public void setColor(String color) {
-       this.color = color;
+    /**
+     * @param texture the texture to set
+     */
+    public void setTexture(String texture) {
+        this.texture = texture;
     }
 
-   public int getAmount() {
-        return amount;
+    /**
+     * @return the quantity
+     */
+    public int getQuantity() {
+        return quantity;
     }
 
-   public void setAmount(int amount) {
-        this.amount = amount;
+    /**
+     * @param quantity the quantity to set
+     */
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-   public double getWeight() {
+    /**
+     * @return the weight
+     */
+    public double getWeight() {
         return weight;
     }
 
-   public void setWeight(double weight) {
+    /**
+     * @param weight the weight to set
+     */
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-   public double getCost() {
+    /**
+     * @return the cost
+     */
+    public float getCost() {
         return cost;
     }
 
-   public void setCost(float cost) {
+    /**
+     * @param cost the cost to set
+     */
+    public void setCost(float cost) {
         this.cost = cost;
     }
+    
     
 }
