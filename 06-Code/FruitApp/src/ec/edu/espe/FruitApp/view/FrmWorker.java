@@ -3,6 +3,10 @@ package ec.edu.espe.fruitApp.view;
 import ec.edu.espe.FruitApp.controller.ConexionMongoDBWorker;
 import ec.edu.espe.fruitApp.controller.RegisterController;
 import ec.edu.espe.fruitApp.model.Worker;
+<<<<<<< HEAD
+=======
+import javax.swing.JFrame;
+>>>>>>> b6300bf420cffef8bdf028b3b3aaf1fe1789701a
 
 /**
  *
@@ -15,6 +19,8 @@ public class FrmWorker extends javax.swing.JFrame {
      */
     public FrmWorker() {
         initComponents();
+        setTitle("FRUIT APP");
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 
     /**

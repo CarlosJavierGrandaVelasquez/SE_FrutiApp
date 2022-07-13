@@ -68,11 +68,15 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="txtFullName" min="-2" pref="217" max="-2" attributes="0"/>
-                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="txtCellPhone" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="cmbCustomerType" alignment="0" pref="124" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="txtCellPhone" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="cmbCustomerType" alignment="0" pref="124" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="lblCellError" max="32767" attributes="0"/>
                                               </Group>
                                               <Component id="spnOffer" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="txtTotalSale" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
@@ -116,6 +120,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCellPhone" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCellPhone" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCellError" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -255,6 +260,9 @@
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="your personal number"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCellPhoneKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbCustomerType">
           <Properties>
@@ -277,6 +285,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JSpinner" name="spnOffer">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCellError">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="_"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

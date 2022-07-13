@@ -3,6 +3,7 @@ package ec.edu.espe.fruitApp.view;
 import ec.edu.espe.FruitApp.controller.ConexionMongoDBCustomer;
 import ec.edu.espe.fruitApp.controller.CustomerController;
 import ec.edu.espe.fruitApp.model.Customer;
+import javax.swing.JFrame;
 
 
 
@@ -17,6 +18,8 @@ public class FrmCustomer extends javax.swing.JFrame {
      */
     public FrmCustomer() {
         initComponents();
+        setTitle("FRUIT APP");
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 
     /**
@@ -47,6 +50,7 @@ public class FrmCustomer extends javax.swing.JFrame {
         cmbCustomerType = new javax.swing.JComboBox<>();
         txtTotalSale = new javax.swing.JTextField();
         spnOffer = new javax.swing.JSpinner();
+        lblCellError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,11 +122,19 @@ public class FrmCustomer extends javax.swing.JFrame {
         txtFullName.setToolTipText("last Name  First Name");
 
         txtCellPhone.setToolTipText("your personal number");
+        txtCellPhone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCellPhoneKeyPressed(evt);
+            }
+        });
 
         cmbCustomerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Regular", "Frecuente" }));
 
         txtTotalSale.setToolTipText("This field is recovered from the database");
         txtTotalSale.setEnabled(false);
+
+        lblCellError.setForeground(new java.awt.Color(255, 0, 51));
+        lblCellError.setText("_");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,11 +160,14 @@ public class FrmCustomer extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtEmail)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(txtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(txtCellPhone, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(cmbCustomerType, javax.swing.GroupLayout.Alignment.LEADING, 0, 124, Short.MAX_VALUE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(txtCellPhone, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(cmbCustomerType, javax.swing.GroupLayout.Alignment.LEADING, 0, 124, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblCellError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                             .addComponent(spnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtTotalSale, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE)))))
@@ -181,7 +196,8 @@ public class FrmCustomer extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCellPhone)
-                    .addComponent(txtCellPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCellPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCellError))
                 .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblType)
@@ -258,6 +274,22 @@ public class FrmCustomer extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnReturnActionPerformed
 
+    private void txtCellPhoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCellPhoneKeyPressed
+        String value = txtCellPhone.getText();
+        int length = value.length();
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9' ){
+            txtCellPhone.setEditable(true);
+            lblCellError.setText("");
+            if(length>=10){
+                txtCellPhone.setEditable(false);
+                lblCellError.setText("Max 10 digits");
+            }
+        }else{
+            txtCellPhone.setEditable(false);
+            lblCellError.setText("*Enter only digits (0 - 9)");
+        }
+    }//GEN-LAST:event_txtCellPhoneKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -301,6 +333,7 @@ public class FrmCustomer extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbCustomerType;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblCellError;
     private javax.swing.JLabel lblCellPhone;
     private javax.swing.JLabel lblCustomer;
     private javax.swing.JLabel lblEmail;

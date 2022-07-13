@@ -12,8 +12,8 @@ public class FrmAppMenu extends javax.swing.JFrame {
     
     
     public FrmAppMenu() {
-        
         initComponents();
+        setTitle("FRUIT APP");
     }
 
     /**

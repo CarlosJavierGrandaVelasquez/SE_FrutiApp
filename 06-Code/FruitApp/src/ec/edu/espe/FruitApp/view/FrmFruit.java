@@ -4,6 +4,7 @@ package ec.edu.espe.fruitApp.view;
 import ec.edu.espe.FruitApp.controller.ConexionMongoDBFruit;
 import ec.edu.espe.fruitApp.controller.FruitController;
 import ec.edu.espe.fruitApp.model.Fruit;
+import javax.swing.JFrame;
 
 /**
  *
@@ -16,6 +17,8 @@ public class FrmFruit extends javax.swing.JFrame {
      */
     public FrmFruit() {
         initComponents();
+        setTitle("FRUIT APP");
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 
     /**

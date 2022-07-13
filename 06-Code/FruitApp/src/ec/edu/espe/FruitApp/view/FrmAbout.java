@@ -1,5 +1,7 @@
 package ec.edu.espe.fruitApp.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
@@ -11,6 +13,8 @@ public class FrmAbout extends javax.swing.JFrame {
      */
     public FrmAbout() {
         initComponents();
+        setTitle("FRUIT APP");
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 
     /**
