@@ -1,7 +1,11 @@
 
 package ec.edu.espe.fruitApp.view;
 
+import ec.edu.espe.FruitApp.view.FrmCustomers;
+import ec.edu.espe.FruitApp.view.FrmFruits;
 import ec.edu.espe.FruitApp.view.FrmHelp;
+import ec.edu.espe.FruitApp.view.FrmVegetables;
+import ec.edu.espe.FruitApp.view.FrmWorkers;
 import java.awt.Image;
 import java.awt.Toolkit;
 
@@ -49,6 +53,11 @@ public class FrmAppMenu extends javax.swing.JFrame {
         mnuVegetable = new javax.swing.JMenuItem();
         mnuRegister = new javax.swing.JMenu();
         mnuiRegister = new javax.swing.JMenuItem();
+        mnuData = new javax.swing.JMenu();
+        itmCustomers = new javax.swing.JMenuItem();
+        itmVegetables = new javax.swing.JMenuItem();
+        itmFruits = new javax.swing.JMenuItem();
+        itmWorkers = new javax.swing.JMenuItem();
         mnuHelp = new javax.swing.JMenu();
         mnuiHelp = new javax.swing.JMenuItem();
 
@@ -132,6 +141,46 @@ public class FrmAppMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuRegister);
 
+        mnuData.setText("DATA");
+
+        itmCustomers.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itmCustomers.setText("Customers");
+        itmCustomers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmCustomersActionPerformed(evt);
+            }
+        });
+        mnuData.add(itmCustomers);
+
+        itmVegetables.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itmVegetables.setText("Vegetables");
+        itmVegetables.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmVegetablesActionPerformed(evt);
+            }
+        });
+        mnuData.add(itmVegetables);
+
+        itmFruits.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itmFruits.setText("Fruits");
+        itmFruits.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmFruitsActionPerformed(evt);
+            }
+        });
+        mnuData.add(itmFruits);
+
+        itmWorkers.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itmWorkers.setText("Workers");
+        itmWorkers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmWorkersActionPerformed(evt);
+            }
+        });
+        mnuData.add(itmWorkers);
+
+        jMenuBar1.add(mnuData);
+
         mnuHelp.setText("HELP");
 
         mnuiHelp.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -211,6 +260,30 @@ public class FrmAppMenu extends javax.swing.JFrame {
     this.dispose();
     }//GEN-LAST:event_mnuiHelpActionPerformed
 
+    private void itmFruitsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmFruitsActionPerformed
+        FrmFruits fruits = new FrmFruits();
+        fruits.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_itmFruitsActionPerformed
+
+    private void itmVegetablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmVegetablesActionPerformed
+        FrmVegetables vegetables = new FrmVegetables();
+        vegetables.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_itmVegetablesActionPerformed
+
+    private void itmCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCustomersActionPerformed
+        FrmCustomers customers = new FrmCustomers();
+        customers.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_itmCustomersActionPerformed
+
+    private void itmWorkersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmWorkersActionPerformed
+        FrmWorkers workers = new FrmWorkers();
+        workers.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_itmWorkersActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -248,11 +321,16 @@ public class FrmAppMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itmCustomers;
+    private javax.swing.JMenuItem itmFruits;
+    private javax.swing.JMenuItem itmVegetables;
+    private javax.swing.JMenuItem itmWorkers;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblFruitApp;
     private javax.swing.JMenuItem mnuAbout;
     private javax.swing.JMenu mnuApp;
     private javax.swing.JMenu mnuCustomer;
+    private javax.swing.JMenu mnuData;
     private javax.swing.JMenuItem mnuExit;
     private javax.swing.JMenuItem mnuFruit;
     private javax.swing.JMenu mnuHelp;
