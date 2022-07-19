@@ -128,10 +128,10 @@ public class FrmAppMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuShop);
 
-        mnuRegister.setText("REGISTER");
+        mnuRegister.setText("Worker");
 
         mnuiRegister.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        mnuiRegister.setText("Register");
+        mnuiRegister.setText("Worker");
         mnuiRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuiRegisterActionPerformed(evt);

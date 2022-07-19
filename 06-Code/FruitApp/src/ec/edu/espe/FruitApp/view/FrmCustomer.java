@@ -6,6 +6,7 @@ import ec.edu.espe.fruitApp.model.Customer;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 
@@ -49,6 +50,7 @@ public class FrmCustomer extends javax.swing.JFrame {
         lblEmail = new javax.swing.JLabel();
         lblFullName = new javax.swing.JLabel();
         lblCellPhone = new javax.swing.JLabel();
+        lblErrorFullName = new javax.swing.JLabel();
         lblType = new javax.swing.JLabel();
         lblOffer = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
@@ -72,7 +74,13 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         btnRemove.setText("Remove");
         btnRemove.setToolTipText("the customer will removed forever from the database");
-        btnRemove.setEnabled(false);
+        btnRemove.setRequestFocusEnabled(false);
+        btnRemove.setRolloverEnabled(false);
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
 
         btnSearch.setText("Search");
         btnSearch.setToolTipText("search the customer ");
@@ -117,6 +125,8 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         lblCellPhone.setText("Cell Phone:");
 
+        lblErrorFullName.setForeground(new java.awt.Color(255, 0, 51));
+
         lblType.setText("Type:");
 
         lblOffer.setText("Offer:");
@@ -130,6 +140,9 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         txtFullName.setToolTipText("last Name  First Name");
         txtFullName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtFullNameKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtFullNameKeyTyped(evt);
             }
@@ -142,7 +155,9 @@ public class FrmCustomer extends javax.swing.JFrame {
             }
         });
 
-        cmbCustomerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Regular", "Frecuente" }));
+        cmbCustomerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Normal", "Regular", "Frecuente" }));
+
+        spnOffer.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
         lblCellError.setForeground(new java.awt.Color(255, 0, 51));
         lblCellError.setText("_");
@@ -178,9 +193,11 @@ public class FrmCustomer extends javax.swing.JFrame {
                                                     .addComponent(cmbCustomerType, javax.swing.GroupLayout.Alignment.LEADING, 0, 124, Short.MAX_VALUE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(lblCellError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addComponent(spnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(spnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblErrorFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -201,7 +218,8 @@ public class FrmCustomer extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFullName)
-                    .addComponent(txtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblErrorFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCellPhone)
@@ -225,15 +243,15 @@ public class FrmCustomer extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 146, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -262,15 +280,22 @@ public class FrmCustomer extends javax.swing.JFrame {
         offer = spnOffer.getValue().toString();
         
         //userCollection.insertOne(document);
+        if ((0!=cmbCustomerType.getSelectedIndex())){
+          customer = new Customer(email, fullName, cellPhone, type, offer, totalSale);
+          ConexionMongoDBCustomer conexionMongoDb= new ConexionMongoDBCustomer();
+          conexionMongoDb.ConexionCustomer(email, fullName, cellPhone, type, offer, totalSale);
+          customerController.register(customer, this);
+          txtFullName.setText("");
+          txtCellPhone.setText("");
+          txtEmail.setText("");
+          spnOffer.setValue(0);
+          cmbCustomerType.setSelectedIndex(0);
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Select type");
+        }
         
-        customer = new Customer(email, fullName, cellPhone, type, offer, totalSale);
-        ConexionMongoDBCustomer conexionMongoDb= new ConexionMongoDBCustomer();
-        conexionMongoDb.ConexionCustomer(email, fullName, cellPhone, type, offer, totalSale);
-        customerController.register(customer, this);
-        
-        txtFullName.setText("");
-        
-        
+       
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
@@ -282,10 +307,15 @@ public class FrmCustomer extends javax.swing.JFrame {
     private void txtCellPhoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCellPhoneKeyPressed
         String value = txtCellPhone.getText();
         int length = value.length();
-        if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9' ){
+        int key = evt.getKeyChar();
+        boolean delete = key == 8;
+        if((evt.getKeyChar() >= '0' && evt.getKeyChar()<='9') || (delete) ){
             txtCellPhone.setEditable(true);
             lblCellError.setText("");
-            if(length>=10){
+            if(delete){
+                txtCellPhone.setEditable(true);
+            }
+            else if(length>=10){
                 txtCellPhone.setEditable(false);
                 lblCellError.setText("Max 10 digits");
             }
@@ -300,16 +330,31 @@ public class FrmCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailKeyTyped
 
     private void txtFullNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFullNameKeyTyped
-        int key = evt.getKeyChar();
+       int key = evt.getKeyChar();
         
         boolean mayusculas = key >= 65 && key <=90;
         boolean minusculas = key >= 97 && key <=122;
         boolean espacio = key == 32;
+        boolean delete = key == 8;
         
-        if(!(minusculas || mayusculas || espacio )){
+        if(!(minusculas || mayusculas || espacio || delete )){
             evt.consume();
+            lblErrorFullName.setText("Enter letters");
+        }else{
+            lblErrorFullName.setText("");
         }
     }//GEN-LAST:event_txtFullNameKeyTyped
+
+    private void txtFullNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFullNameKeyPressed
+            }//GEN-LAST:event_txtFullNameKeyPressed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        txtFullName.setText("");
+        txtCellPhone.setText("");
+        txtEmail.setText("");
+        spnOffer.setValue(0);
+        cmbCustomerType.setSelectedIndex(0);
+    }//GEN-LAST:event_btnRemoveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,6 +403,7 @@ public class FrmCustomer extends javax.swing.JFrame {
     private javax.swing.JLabel lblCellPhone;
     private javax.swing.JLabel lblCustomer;
     private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblErrorFullName;
     private javax.swing.JLabel lblFullName;
     private javax.swing.JLabel lblOffer;
     private javax.swing.JLabel lblType;

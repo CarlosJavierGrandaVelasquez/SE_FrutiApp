@@ -22,6 +22,8 @@ public class FrmFruit extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
+        final String cost=("0.");
+        txtCost.setText(cost);
     }
 
     @Override
@@ -69,6 +71,11 @@ public class FrmFruit extends javax.swing.JFrame {
         });
 
         btnRemove.setText("REMOVE");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
 
         btnReturn.setText("RETURN");
         btnReturn.addActionListener(new java.awt.event.ActionListener() {
@@ -84,11 +91,11 @@ public class FrmFruit extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnAdd)
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addComponent(btnRemove)
-                .addGap(45, 45, 45)
+                .addGap(41, 41, 41)
                 .addComponent(btnReturn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,19 +114,26 @@ public class FrmFruit extends javax.swing.JFrame {
         lblName.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         lblName.setText("Name of fruit: ");
 
-        cmbName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apple", "Pear", "Strawberry", "Pineapple", "Coconut", "Orange", "Papaya", "Banana", " " }));
+        cmbName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Apple", "Pear", "Strawberry", "Pineapple", "Coconut", "Orange", "Papaya", "Banana", " " }));
 
         lblTexture.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTexture.setText("Texture of fruit:");
 
-        cmbTexture.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ripe", "Tender" }));
+        cmbTexture.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Ripe", "Tender" }));
 
         lblQuantity.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblQuantity.setText("Quantity:");
 
+        spnQuantity.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
+
         lblWeight.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblWeight.setText("Weight:");
 
+        txtWeight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtWeightActionPerformed(evt);
+            }
+        });
         txtWeight.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtWeightKeyPressed(evt);
@@ -275,13 +289,21 @@ public class FrmFruit extends javax.swing.JFrame {
     private void txtWeightKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtWeightKeyPressed
         String value = txtWeight.getText();
         int length = value.length();
-        if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9' ){
+        int key = evt.getKeyChar();
+        boolean delete = key == 8;
+        boolean dot = key == 46;
+        
+        if((evt.getKeyChar() >= '0' && evt.getKeyChar()<='9')||(delete) ||(dot)){
             txtWeight.setEditable(true);
             lblWeightError.setText("");
-            if(length>=3){
-                txtWeight.setEditable(false);
-                lblWeightError.setText("Max 3 digits");
+            if(delete){
+                txtWeight.setEditable(true);
             }
+            else if(length>=4){
+                txtWeight.setEditable(false);
+                lblWeightError.setText("Max 4 digits");
+         }
+        
         }else{
             txtWeight.setEditable(false);
             lblWeightError.setText("*Enter only digits (0 - 9)");
@@ -291,18 +313,41 @@ public class FrmFruit extends javax.swing.JFrame {
     private void txtCostKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostKeyPressed
         String value = txtCost.getText();
         int length = value.length();
-        if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9' ){
+        int key = evt.getKeyChar();
+        boolean delete = key == 8;
+        boolean dot = key == 46;
+        if((evt.getKeyChar() >= '0' && evt.getKeyChar()<='9') ||(delete) ){
             txtCost.setEditable(true);
             lblCostError.setText("");
-            if(length>=3){
+            if((length>=0) && (length<=2)){
+              txtCost.setEditable(false);
+            }
+            else if(delete){
+                txtCost.setEditable(true);
+            }
+            else if(length>=4){
                 txtCost.setEditable(false);
-                lblCostError.setText("Max 3 digits");
+                lblCostError.setText("Max 4 digits");
             }
         }else{
             txtCost.setEditable(false);
             lblCostError.setText("*Enter only digits (0 - 9)");
         }
     }//GEN-LAST:event_txtCostKeyPressed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        final String cost=("0.");
+        txtCost.setText(cost);
+        txtCost.setText(cost);
+        txtWeight.setText("");
+        spnQuantity.setValue(0);
+        cmbName.setSelectedIndex(0);
+        cmbTexture.setSelectedIndex(0);
+    }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void txtWeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWeightActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtWeightActionPerformed
 
     /**
      * @param args the command line arguments
