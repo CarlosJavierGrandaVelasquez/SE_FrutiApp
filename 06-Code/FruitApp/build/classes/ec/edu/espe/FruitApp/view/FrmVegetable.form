@@ -188,6 +188,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="REMOVE"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnReturn">
               <Properties>
@@ -218,21 +221,25 @@
         <Component class="javax.swing.JComboBox" name="cmbName">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="11">
-                <StringItem index="0" value="Corn"/>
-                <StringItem index="1" value="Broccoli"/>
-                <StringItem index="2" value="Tomato"/>
-                <StringItem index="3" value="Carrot"/>
-                <StringItem index="4" value="Avocado"/>
-                <StringItem index="5" value="Lettuce"/>
-                <StringItem index="6" value="Garlic"/>
-                <StringItem index="7" value="Cucumber"/>
-                <StringItem index="8" value="Turnip"/>
-                <StringItem index="9" value="Onion"/>
-                <StringItem index="10" value=" "/>
+              <StringArray count="12">
+                <StringItem index="0" value="Select"/>
+                <StringItem index="1" value="Corn"/>
+                <StringItem index="2" value="Broccoli"/>
+                <StringItem index="3" value="Tomato"/>
+                <StringItem index="4" value="Carrot"/>
+                <StringItem index="5" value="Avocado"/>
+                <StringItem index="6" value="Lettuce"/>
+                <StringItem index="7" value="Garlic"/>
+                <StringItem index="8" value="Cucumber"/>
+                <StringItem index="9" value="Turnip"/>
+                <StringItem index="10" value="Onion"/>
+                <StringItem index="11" value=" "/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbNameActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -248,9 +255,10 @@
         <Component class="javax.swing.JComboBox" name="cmbTexture">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
-                <StringItem index="0" value="Ripe"/>
-                <StringItem index="1" value="Tender"/>
+              <StringArray count="3">
+                <StringItem index="0" value="Select"/>
+                <StringItem index="1" value="Ripe"/>
+                <StringItem index="2" value="Tender"/>
               </StringArray>
             </Property>
           </Properties>

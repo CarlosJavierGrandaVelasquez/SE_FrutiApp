@@ -49,10 +49,16 @@ public class FrmFruits extends javax.swing.JFrame {
 
         tblFruits.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {"Orange", "Tender", "3", "2.5", "0.25"},
+                {"Strawberry", "Tender", "2", "12", "0.21"},
+                {"Pear", "Tender", "2", "21", "0.20"},
+                {"Apple", "Tender", "4", "12.2", "0.200"},
+                {"Pear", "Ripe", "2", "12.3", "0.89"},
+                {"Pineapple", "Ripe", "6", "123", "12"},
+                {"Pear", "Tender", "2", "21", "0.20"},
+                {"Apple", "Tender", "4", "12.2", "0.20"},
+                {"Pear", "Ripe", "2", "12.3", "0.89"},
+                {"Strawberry", "Tender", "1", "312", null}
             },
             new String [] {
                 "Name Fruit", "Texture", "Quantity", "Weight", "Cost"
