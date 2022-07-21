@@ -64,7 +64,7 @@ public class FrmAppMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblFruitApp.setFont(new java.awt.Font("Viner Hand ITC", 1, 18)); // NOI18N
-        lblFruitApp.setText("FRUIT APP");
+        lblFruitApp.setText("FRUIT APP 2.0.0");
 
         mnuApp.setText("FRUIT APP");
 
@@ -203,7 +203,7 @@ public class FrmAppMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(185, 185, 185)
                 .addComponent(lblFruitApp)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

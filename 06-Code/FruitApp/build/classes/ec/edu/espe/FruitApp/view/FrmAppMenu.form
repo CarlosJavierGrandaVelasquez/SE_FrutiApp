@@ -199,7 +199,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
               <Component id="lblFruitApp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="189" max="32767" attributes="0"/>
+              <EmptySpace pref="142" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -219,7 +219,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Viner Hand ITC" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="FRUIT APP"/>
+        <Property name="text" type="java.lang.String" value="FRUIT APP 2.0.0"/>
       </Properties>
     </Component>
   </SubComponents>

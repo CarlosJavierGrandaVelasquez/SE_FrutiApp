@@ -2,6 +2,7 @@
 package ec.edu.espe.FruitApp.view;
 
 import ec.edu.espe.fruitApp.view.FrmAppMenu;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,9 +29,9 @@ public class FrmLogin extends javax.swing.JFrame {
         lblLogin = new javax.swing.JLabel();
         btnEnter = new javax.swing.JButton();
         lblId = new javax.swing.JLabel();
-        lblName = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
-        txtName = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JPasswordField();
+        lblPassword = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,7 +46,7 @@ public class FrmLogin extends javax.swing.JFrame {
 
         lblId.setText("Id");
 
-        lblName.setText("Name");
+        lblPassword.setText("Password");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,12 +63,12 @@ public class FrmLogin extends javax.swing.JFrame {
                         .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(76, 76, 76)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(301, Short.MAX_VALUE))
+                            .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(53, 53, 53)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtId)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))))
+                .addContainerGap(280, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,11 +79,11 @@ public class FrmLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblId)
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPassword))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addComponent(btnEnter)
                 .addGap(88, 88, 88))
         );
@@ -91,9 +92,23 @@ public class FrmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-        FrmAppMenu am = new FrmAppMenu();
+        int password= Integer.parseInt(txtPassword.getText());
+        int id=Integer.parseInt(txtId.getText());
+        if((password==171819)&& (id==1718193145)){
+      FrmAppMenu am = new FrmAppMenu();
         am.setVisible(true);
-        this.dispose();
+        this.dispose();  
+    }else if(id!=1718193145){
+            JOptionPane.showMessageDialog(rootPane, "Wrong id");
+        }
+    else if (password!=171819){
+            JOptionPane.showMessageDialog(rootPane, "Wrong password");
+    }
+    else{
+            JOptionPane.showMessageDialog(rootPane, "Wrong Id and Wrong Password");
+    }
+            
+       
     }//GEN-LAST:event_btnEnterActionPerformed
 
     /**
@@ -135,8 +150,8 @@ public class FrmLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnEnter;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblLogin;
-    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPassword;
     private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtName;
+    private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

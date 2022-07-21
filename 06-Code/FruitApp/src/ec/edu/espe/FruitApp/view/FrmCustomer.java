@@ -278,9 +278,7 @@ public class FrmCustomer extends javax.swing.JFrame {
         customerController = new CustomerController();
         
         email = txtEmail.getText();
-        //document.append("Email", email);
         fullName = txtFullName.getText();
-        //document.append("Name",fullName);
         cellPhone = Integer.parseInt(txtCellPhone.getText());
         type = cmbCustomerType.getSelectedItem().toString();
         offer = spnOffer.getValue().toString();

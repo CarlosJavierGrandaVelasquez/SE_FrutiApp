@@ -251,7 +251,6 @@ public class FrmWorker extends javax.swing.JFrame {
         
         name = txtName.getText();
         code = txtCode.getText();
-        //amount = Integer.parseInt(txtAmount.getText());
         id = Integer.parseInt(txtId.getText());
         
         register = new Worker(name, code, id);
