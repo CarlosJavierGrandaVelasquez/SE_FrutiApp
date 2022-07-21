@@ -257,7 +257,12 @@ public class FrmWorker extends javax.swing.JFrame {
         registerController.save(register, this);
         ConexionMongoDBWorker conexionMongoDb = new ConexionMongoDBWorker();
         conexionMongoDb.ConexionWorker(name, code, id);
-        
+        txtCode.setText("");
+        txtId.setText("");
+        txtName.setText("");
+        lblCodeError.setText("");
+        lblIdError.setText("");
+        lblNameError.setText("");
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyPressed

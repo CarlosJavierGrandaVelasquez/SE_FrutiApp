@@ -313,6 +313,11 @@ public class FrmFruit extends javax.swing.JFrame {
             txtWeight.setEditable(false);
             lblWeightError.setText("*Enter only digits (0 - 9)");
         }
+        txtCost.setText("0.");
+        txtWeight.setText("");
+        cmbName.setSelectedIndex(0);
+        cmbTexture.setSelectedIndex(0);
+        spnQuantity.setValue(0);
     }//GEN-LAST:event_txtWeightKeyPressed
 
     private void txtCostKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostKeyPressed

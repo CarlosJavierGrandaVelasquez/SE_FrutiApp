@@ -287,6 +287,11 @@ public class FrmVegetable extends javax.swing.JFrame {
         
          ConexionMongoDBVerdure conexionMongoDb = new ConexionMongoDBVerdure();
         conexionMongoDb.ConexionVerdure(name, texture, quantity, weight, cost);
+        txtCost.setText(("0."));
+        txtWeight.setText("");
+        spnQuantity.setValue(0);
+        cmbName.setSelectedItem(0);
+        cmbTexture.setSelectedIndex(0);
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void txtWeightKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtWeightKeyPressed

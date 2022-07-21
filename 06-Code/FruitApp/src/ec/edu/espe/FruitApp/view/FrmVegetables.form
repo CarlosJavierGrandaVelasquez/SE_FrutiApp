@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -94,12 +94,47 @@
             <Component class="javax.swing.JTable" name="tblVegetables">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="4">
-                    <Column editable="true" title="Name Vegetable" type="java.lang.Object"/>
-                    <Column editable="true" title="Texture" type="java.lang.Object"/>
-                    <Column editable="true" title="Quantity" type="java.lang.Object"/>
-                    <Column editable="true" title="Weight" type="java.lang.Object"/>
-                    <Column editable="true" title="Cost" type="java.lang.Object"/>
+                  <Table columnCount="5" rowCount="6">
+                    <Column editable="true" title="Name Vegetable" type="java.lang.Object">
+                      <Data value="Avocado"/>
+                      <Data value="Tomato"/>
+                      <Data value="Brocoli"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Texture" type="java.lang.Object">
+                      <Data value="Ripe"/>
+                      <Data value="Tender"/>
+                      <Data value="Ripe"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Quantity" type="java.lang.Object">
+                      <Data value="2"/>
+                      <Data value="2"/>
+                      <Data value="0"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Weight" type="java.lang.Object">
+                      <Data value="3.2"/>
+                      <Data value="21"/>
+                      <Data value="123"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Cost" type="java.lang.Object">
+                      <Data value="0.9"/>
+                      <Data value="0.23"/>
+                      <Data value="0.12"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

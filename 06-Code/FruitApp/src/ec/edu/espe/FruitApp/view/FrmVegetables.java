@@ -48,7 +48,9 @@ public class FrmVegetables extends javax.swing.JFrame {
 
         tblVegetables.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
+                {"Avocado", "Ripe", "2", "3.2", "0.9"},
+                {"Tomato", "Tender", "2", "21", "0.23"},
+                {"Brocoli", "Ripe", "0", "123", "0.12"},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null}

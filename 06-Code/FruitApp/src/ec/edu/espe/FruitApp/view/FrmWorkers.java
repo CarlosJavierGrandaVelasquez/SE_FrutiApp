@@ -59,8 +59,8 @@ public class FrmWorkers extends javax.swing.JFrame {
 
         tblWorkers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
+                {"Carlos Granda", "17121", "1712951055"},
+                {"Jose Imbaquinga", "1212", "1718193145"},
                 {null, null, null},
                 {null, null, null}
             },
