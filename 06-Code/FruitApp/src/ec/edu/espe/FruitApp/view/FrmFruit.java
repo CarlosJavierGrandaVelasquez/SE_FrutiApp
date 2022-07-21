@@ -143,6 +143,11 @@ public class FrmFruit extends javax.swing.JFrame {
         lblCost.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblCost.setText("Cost:");
 
+        txtCost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCostActionPerformed(evt);
+            }
+        });
         txtCost.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCostKeyPressed(evt);
@@ -319,10 +324,7 @@ public class FrmFruit extends javax.swing.JFrame {
         if((evt.getKeyChar() >= '0' && evt.getKeyChar()<='9') ||(delete) ){
             txtCost.setEditable(true);
             lblCostError.setText("");
-            if((length>=0) && (length<=2)){
-              txtCost.setEditable(false);
-            }
-            else if(delete){
+             if(delete){
                 txtCost.setEditable(true);
             }
             else if(length>=4){
@@ -348,6 +350,10 @@ public class FrmFruit extends javax.swing.JFrame {
     private void txtWeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWeightActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtWeightActionPerformed
+
+    private void txtCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCostActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCostActionPerformed
 
     /**
      * @param args the command line arguments

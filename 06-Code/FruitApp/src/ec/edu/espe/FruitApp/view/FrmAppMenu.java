@@ -1,7 +1,7 @@
 
 package ec.edu.espe.fruitApp.view;
 
-import ec.edu.espe.FruitApp.view.FrmCustomers;
+import ec.edu.espe.FruitApp.view.FrmCustomersTable;
 import ec.edu.espe.FruitApp.view.FrmFruits;
 import ec.edu.espe.FruitApp.view.FrmHelp;
 import ec.edu.espe.FruitApp.view.FrmVegetables;
@@ -273,7 +273,7 @@ public class FrmAppMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmVegetablesActionPerformed
 
     private void itmCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCustomersActionPerformed
-        FrmCustomers customers = new FrmCustomers();
+        FrmCustomersTable customers = new FrmCustomersTable();
         customers.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_itmCustomersActionPerformed

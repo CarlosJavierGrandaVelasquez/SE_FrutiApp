@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package ec.edu.espe.FruitApp.view;
 
 import ec.edu.espe.fruitApp.view.FrmAppMenu;
@@ -11,7 +8,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Carlos Granda, DCCO-ESPE, Syntax Error
+ * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class FrmFruits extends javax.swing.JFrame {
 
