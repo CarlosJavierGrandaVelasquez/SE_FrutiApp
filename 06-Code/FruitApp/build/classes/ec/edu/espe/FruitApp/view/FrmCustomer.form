@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -24,17 +24,17 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="190" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="34" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,27 +62,31 @@
                                           <Component id="lblCellPhone" pref="64" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="lblOffer" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="lblTotalSale" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="txtFullName" min="-2" pref="217" max="-2" attributes="0"/>
-                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="txtCellPhone" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="cmbCustomerType" alignment="0" pref="124" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="txtCellPhone" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="cmbCustomerType" alignment="0" pref="124" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="lblCellError" max="32767" attributes="0"/>
                                               </Group>
-                                              <Component id="spnOffer" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtTotalSale" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                              <Component id="spnOffer" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="lblErrorFullName" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="79" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="lblEmail" min="-2" pref="37" max="-2" attributes="0"/>
@@ -111,11 +115,13 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblFullName" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtFullName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblErrorFullName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCellPhone" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCellPhone" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCellError" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -127,12 +133,7 @@
                       <Component id="lblOffer" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="spnOffer" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtTotalSale" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblTotalSale" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="134" max="32767" attributes="0"/>
+                  <EmptySpace pref="207" max="32767" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -192,8 +193,12 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Remove"/>
                 <Property name="toolTipText" type="java.lang.String" value="the customer will removed forever from the database"/>
-                <Property name="enabled" type="boolean" value="false"/>
+                <Property name="requestFocusEnabled" type="boolean" value="false"/>
+                <Property name="rolloverEnabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSearch">
               <Properties>
@@ -229,6 +234,13 @@
             <Property name="text" type="java.lang.String" value="Cell Phone:"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="lblErrorFullName">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="0" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JLabel" name="lblType">
           <Properties>
             <Property name="text" type="java.lang.String" value="Type:"/>
@@ -239,33 +251,39 @@
             <Property name="text" type="java.lang.String" value="Offer:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblTotalSale">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Total Sale:"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="txtEmail">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Here you must enter your email"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmailKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFullName">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="last Name  First Name"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFullNameKeyPressed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFullNameKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCellPhone">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="your personal number"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCellPhoneKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbCustomerType">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="Normal"/>
-                <StringItem index="1" value="Regular"/>
-                <StringItem index="2" value="Frecuente"/>
+              <StringArray count="4">
+                <StringItem index="0" value="Select"/>
+                <StringItem index="1" value="Normal"/>
+                <StringItem index="2" value="Regular"/>
+                <StringItem index="3" value="Frecuente"/>
               </StringArray>
             </Property>
           </Properties>
@@ -273,13 +291,20 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtTotalSale">
+        <Component class="javax.swing.JSpinner" name="spnOffer">
           <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="This field is recovered from the database"/>
-            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+              <SpinnerModel initial="0" maximum="50" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+            </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="spnOffer">
+        <Component class="javax.swing.JLabel" name="lblCellError">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="_"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

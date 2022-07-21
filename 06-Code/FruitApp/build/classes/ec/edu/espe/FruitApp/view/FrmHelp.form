@@ -23,12 +23,9 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel1" max="32767" attributes="0"/>
-                  <Component id="jPanel2" max="32767" attributes="0"/>
-              </Group>
+              <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -36,11 +33,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -52,38 +47,49 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="lblAbout" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="347" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="328" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                  <Component id="btnReturn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="lblAbout" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="156" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="140" max="-2" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <Component id="btnReturn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblAbout">
+        <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="ABOUT FRUIT APP"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="HELP"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -93,44 +99,16 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="txtAbout">
+            <Component class="javax.swing.JTextArea" name="jTextArea1">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="1"/>
-                </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="FRUIT APP IS A INVENTORY IN THE CLOUD&#xa;IN THE DATA BASE OF MONGO DB&#xa;&#xa;CREATOR: CARLOS GRANDA&#xa;Jose Imbaquinga&#xa;Roony Ibarra&#xa;&#xa;VERSION: 1.0"/>
+                <Property name="text" type="java.lang.String" value="If you have any problem, contact the &#xa;developer at the following email &#xa;&#xa;Emails: &#xa;cjgranda1@espe.edu.ec&#xa;jrimbaquinga@espe.edu.ec&#xa;rjibarra12@espe.edu.ec"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JPanel" name="jPanel2">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnReturn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnReturn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="17" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
         <Component class="javax.swing.JButton" name="btnReturn">
           <Properties>
             <Property name="text" type="java.lang.String" value="RETURN"/>

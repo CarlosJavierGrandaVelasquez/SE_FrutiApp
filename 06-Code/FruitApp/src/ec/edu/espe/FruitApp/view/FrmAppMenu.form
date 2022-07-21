@@ -85,7 +85,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuRegister">
           <Properties>
-            <Property name="text" type="java.lang.String" value="REGISTER"/>
+            <Property name="text" type="java.lang.String" value="Worker"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuiRegister">
@@ -93,10 +93,61 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Alt+L"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Register Product"/>
+                <Property name="text" type="java.lang.String" value="Worker"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuiRegisterActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="mnuData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DATA"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="itmCustomers">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Shift+G"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Customers"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmCustomersActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="itmVegetables">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Shift+J"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Vegetables"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmVegetablesActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="itmFruits">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Shift+U"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Fruits"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmFruitsActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="itmWorkers">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Shift+K"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Workers"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmWorkersActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -111,7 +162,7 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+F"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Help Customer"/>
+                <Property name="text" type="java.lang.String" value="Help"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuiHelpActionPerformed"/>
@@ -148,7 +199,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
               <Component id="lblFruitApp" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="189" max="32767" attributes="0"/>
+              <EmptySpace pref="142" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -168,7 +219,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Viner Hand ITC" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="FRUIT APP"/>
+        <Property name="text" type="java.lang.String" value="FRUIT APP 2.0.0"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -4,6 +4,9 @@ package ec.edu.espe.fruitApp.view;
 import ec.edu.espe.FruitApp.controller.ConexionMongoDBFruit;
 import ec.edu.espe.fruitApp.controller.FruitController;
 import ec.edu.espe.fruitApp.model.Fruit;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
 
 /**
  *
@@ -16,8 +19,18 @@ public class FrmFruit extends javax.swing.JFrame {
      */
     public FrmFruit() {
         initComponents();
+        setTitle("FRUIT APP");
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setIconImage(getIconImage());
+        final String cost=("0.");
+        txtCost.setText(cost);
     }
 
+    @Override
+        public Image getIconImage(){
+            Image retValue=Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagen/Simbolo.png"));
+            return retValue;
+        }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,6 +58,8 @@ public class FrmFruit extends javax.swing.JFrame {
         txtCost = new javax.swing.JTextField();
         lblLb = new javax.swing.JLabel();
         lblMoney = new javax.swing.JLabel();
+        lblWeightError = new javax.swing.JLabel();
+        lblCostError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +71,11 @@ public class FrmFruit extends javax.swing.JFrame {
         });
 
         btnRemove.setText("REMOVE");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
 
         btnReturn.setText("RETURN");
         btnReturn.addActionListener(new java.awt.event.ActionListener() {
@@ -71,11 +91,11 @@ public class FrmFruit extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnAdd)
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addComponent(btnRemove)
-                .addGap(45, 45, 45)
+                .addGap(41, 41, 41)
                 .addComponent(btnReturn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,25 +114,55 @@ public class FrmFruit extends javax.swing.JFrame {
         lblName.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         lblName.setText("Name of fruit: ");
 
-        cmbName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apple", "Pear", "Strawberry", "Pineapple", "Coconut", "Orange", "Papaya", "Banana", " " }));
+        cmbName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Apple", "Pear", "Strawberry", "Pineapple", "Coconut", "Orange", "Papaya", "Banana", " " }));
 
         lblTexture.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTexture.setText("Texture of fruit:");
 
-        cmbTexture.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ripe", "Tender" }));
+        cmbTexture.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Ripe", "Tender" }));
 
         lblQuantity.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblQuantity.setText("Quantity:");
 
+        spnQuantity.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
+
         lblWeight.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblWeight.setText("Weight:");
+
+        txtWeight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtWeightActionPerformed(evt);
+            }
+        });
+        txtWeight.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtWeightKeyPressed(evt);
+            }
+        });
 
         lblCost.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblCost.setText("Cost:");
 
+        txtCost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCostActionPerformed(evt);
+            }
+        });
+        txtCost.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCostKeyPressed(evt);
+            }
+        });
+
         lblLb.setText("Lb");
 
         lblMoney.setText("$");
+
+        lblWeightError.setForeground(new java.awt.Color(255, 0, 51));
+        lblWeightError.setText("_");
+
+        lblCostError.setForeground(new java.awt.Color(255, 0, 0));
+        lblCostError.setText("_");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,7 +194,12 @@ public class FrmFruit extends javax.swing.JFrame {
                             .addComponent(txtWeight, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmbTexture, javax.swing.GroupLayout.Alignment.LEADING, 0, 83, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblLb, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblLb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblWeightError, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblCostError, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -171,13 +226,15 @@ public class FrmFruit extends javax.swing.JFrame {
                     .addComponent(lblWeight)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblLb)))
+                        .addComponent(lblLb)
+                        .addComponent(lblWeightError)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCost)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblMoney)))
+                        .addComponent(lblMoney)
+                        .addComponent(lblCostError)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -234,6 +291,70 @@ public class FrmFruit extends javax.swing.JFrame {
         conexionMongoDb.ConexionFruit(name, texture, quantity, weight, cost);
     }//GEN-LAST:event_btnAddActionPerformed
 
+    private void txtWeightKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtWeightKeyPressed
+        String value = txtWeight.getText();
+        int length = value.length();
+        int key = evt.getKeyChar();
+        boolean delete = key == 8;
+        boolean dot = key == 46;
+        
+        if((evt.getKeyChar() >= '0' && evt.getKeyChar()<='9')||(delete) ||(dot)){
+            txtWeight.setEditable(true);
+            lblWeightError.setText("");
+            if(delete){
+                txtWeight.setEditable(true);
+            }
+            else if(length>=4){
+                txtWeight.setEditable(false);
+                lblWeightError.setText("Max 4 digits");
+         }
+        
+        }else{
+            txtWeight.setEditable(false);
+            lblWeightError.setText("*Enter only digits (0 - 9)");
+        }
+    }//GEN-LAST:event_txtWeightKeyPressed
+
+    private void txtCostKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostKeyPressed
+        String value = txtCost.getText();
+        int length = value.length();
+        int key = evt.getKeyChar();
+        boolean delete = key == 8;
+        boolean dot = key == 46;
+        if((evt.getKeyChar() >= '0' && evt.getKeyChar()<='9') ||(delete) ){
+            txtCost.setEditable(true);
+            lblCostError.setText("");
+             if(delete){
+                txtCost.setEditable(true);
+            }
+            else if(length>=4){
+                txtCost.setEditable(false);
+                lblCostError.setText("Max 4 digits");
+            }
+        }else{
+            txtCost.setEditable(false);
+            lblCostError.setText("*Enter only digits (0 - 9)");
+        }
+    }//GEN-LAST:event_txtCostKeyPressed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        final String cost=("0.");
+        txtCost.setText(cost);
+        txtCost.setText(cost);
+        txtWeight.setText("");
+        spnQuantity.setValue(0);
+        cmbName.setSelectedIndex(0);
+        cmbTexture.setSelectedIndex(0);
+    }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void txtWeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWeightActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtWeightActionPerformed
+
+    private void txtCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCostActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCostActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -278,6 +399,7 @@ public class FrmFruit extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblCost;
+    private javax.swing.JLabel lblCostError;
     private javax.swing.JLabel lblFruit;
     private javax.swing.JLabel lblLb;
     private javax.swing.JLabel lblMoney;
@@ -285,6 +407,7 @@ public class FrmFruit extends javax.swing.JFrame {
     private javax.swing.JLabel lblQuantity;
     private javax.swing.JLabel lblTexture;
     private javax.swing.JLabel lblWeight;
+    private javax.swing.JLabel lblWeightError;
     private javax.swing.JSpinner spnQuantity;
     private javax.swing.JTextField txtCost;
     private javax.swing.JTextField txtWeight;

@@ -20,9 +20,6 @@ public class Vegetable {
         this.cost = cost;
     }
 
-    public Vegetable() {
-    }
-
     public String getName() {
         return name;
     }
@@ -63,7 +60,5 @@ public class Vegetable {
         this.cost = cost;
     }
 
-    
-    
-    
+   
 }

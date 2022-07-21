@@ -4,16 +4,14 @@ package ec.edu.espe.fruitApp.model;
  *
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
-public class Register {
+public class Worker {
     private String name;
     private String code;
-    private int amount;
     private int id;
 
-    public Register(String name, String code, int amount, int id) {
+    public Worker(String name, String code, int id) {
         this.name = name;
         this.code = code;
-        this.amount = amount;
         this.id = id;
     }
 
@@ -31,14 +29,6 @@ public class Register {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
     }
 
     public int getId() {

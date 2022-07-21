@@ -1,6 +1,6 @@
 package ec.edu.espe.fruitApp.controller;
 
-import ec.edu.espe.fruitApp.model.Register;
+import ec.edu.espe.fruitApp.model.Worker;
 import ec.edu.espe.fruitApp.view.FrmWorker;
 import javax.swing.JOptionPane;
 
@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  */
 public class RegisterController {
 
-    public boolean save(Register register, FrmWorker aThis) {
+    public boolean save(Worker register, FrmWorker aThis) {
         String message;
         message = register.getName()+"is going to be added to the database";
         JOptionPane.showMessageDialog(aThis, message);
