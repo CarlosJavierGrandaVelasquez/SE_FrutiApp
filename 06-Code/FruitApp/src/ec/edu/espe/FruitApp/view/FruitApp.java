@@ -2,10 +2,7 @@ package ec.edu.espe.FruitApp.view;
 import com.mongodb.client.MongoCollection;
 import ec.edu.espe.FruitApp.model.Client;
 
-import ec.edu.espe.FruitApp.model.Fruit;
-import ec.edu.espe.FruitApp.model.Register;
-import ec.edu.espe.FruitApp.model.Vegetable;
-import ec.edu.espe.FruitApp.model.Worker;
+
 import java.io.BufferedReader;
 import java.util.Scanner;
 import javax.swing.table.DefaultTableModel;
@@ -13,6 +10,7 @@ import org.bson.Document;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import static java.time.Clock.system;
 /**
  *
  *@author Carlos Granda,Ronny Ibarra,Jose Imbaquinga, DCCO-ESPE, Syntax Error
@@ -52,7 +50,7 @@ public class FruitApp {
               id=entrada.nextInt();
               System.out.println("Enter the age of the person you "
                        + "want to register:");
-              ge=entrada.nextInt();
+              id=entrada.nextInt();
               System.out.println("Enter the name you want to register:");
               name=entrada.next();
               Client c2=new Client(name,id,age);
