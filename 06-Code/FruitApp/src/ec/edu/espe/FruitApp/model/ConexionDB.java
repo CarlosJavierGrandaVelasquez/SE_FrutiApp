@@ -19,6 +19,7 @@ MongoClientSettings settings = MongoClientSettings.builder()
         .build();
 MongoClient mongoClient = MongoClients.create(settings);
 MongoDatabase database = mongoClient.getDatabase("FruitDB");
+
 public MongoDatabase GetDB(){
     return database;
 }

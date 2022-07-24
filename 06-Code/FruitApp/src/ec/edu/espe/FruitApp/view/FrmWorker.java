@@ -21,6 +21,7 @@ public class FrmWorker extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
+        setLocationRelativeTo(null);
     }
 
     @Override

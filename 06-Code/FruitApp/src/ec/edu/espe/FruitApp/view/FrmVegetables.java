@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package ec.edu.espe.FruitApp.view;
 
 import ec.edu.espe.fruitApp.view.FrmAppMenu;
@@ -23,6 +19,7 @@ public class FrmVegetables extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
+        setLocationRelativeTo(null);
     }
 
     @Override

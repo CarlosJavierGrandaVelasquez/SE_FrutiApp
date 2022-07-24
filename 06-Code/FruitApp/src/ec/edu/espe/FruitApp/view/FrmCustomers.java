@@ -1,9 +1,12 @@
 package ec.edu.espe.FruitApp.view;
 
+
+
 import ec.edu.espe.fruitApp.view.FrmAppMenu;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+
 
 /**
  *
@@ -19,6 +22,7 @@ public class FrmCustomers extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
+        setLocationRelativeTo(null);
     }
 
     @Override
@@ -118,7 +122,8 @@ public class FrmCustomers extends javax.swing.JFrame {
         am.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnReturnActionPerformed
-
+  
+    
     /**
      * @param args the command line arguments
      */

@@ -22,6 +22,7 @@ public class FrmFruit extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
+        setLocationRelativeTo(null);
     }
 
     @Override
@@ -274,8 +275,8 @@ public class FrmFruit extends javax.swing.JFrame {
 
     private void txtWeightKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtWeightKeyPressed
         String value = txtWeight.getText();
-        int length = value.length();
-        if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9' ){
+        double length = value.length();
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9'){
             txtWeight.setEditable(true);
             lblWeightError.setText("");
             if(length>=3){
@@ -284,13 +285,13 @@ public class FrmFruit extends javax.swing.JFrame {
             }
         }else{
             txtWeight.setEditable(false);
-            lblWeightError.setText("*Enter only digits (0 - 9)");
+            lblWeightError.setText("*Enter only digits (0 - 0.99)");
         }
     }//GEN-LAST:event_txtWeightKeyPressed
 
     private void txtCostKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostKeyPressed
         String value = txtCost.getText();
-        int length = value.length();
+        double length = value.length();
         if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9' ){
             txtCost.setEditable(true);
             lblCostError.setText("");
@@ -300,7 +301,7 @@ public class FrmFruit extends javax.swing.JFrame {
             }
         }else{
             txtCost.setEditable(false);
-            lblCostError.setText("*Enter only digits (0 - 9)");
+            lblCostError.setText("*Enter only digits (0 - 0.99)");
         }
     }//GEN-LAST:event_txtCostKeyPressed
 

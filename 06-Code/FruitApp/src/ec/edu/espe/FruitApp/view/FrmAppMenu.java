@@ -24,6 +24,7 @@ public class FrmAppMenu extends javax.swing.JFrame {
         initComponents();
         setTitle("FRUIT APP");
         setIconImage(getIconImage());
+        setLocationRelativeTo(null);
     }
     
     @Override
