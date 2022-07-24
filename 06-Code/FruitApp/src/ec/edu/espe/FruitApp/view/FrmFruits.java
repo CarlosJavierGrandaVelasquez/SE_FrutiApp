@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package ec.edu.espe.FruitApp.view;
 
 import ec.edu.espe.fruitApp.view.FrmAppMenu;
@@ -11,7 +8,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Carlos Granda, DCCO-ESPE, Syntax Error
+ * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class FrmFruits extends javax.swing.JFrame {
 
@@ -53,10 +50,16 @@ public class FrmFruits extends javax.swing.JFrame {
 
         tblFruits.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {"Orange", "Tender", "3", "2.5", "0.25"},
+                {"Strawberry", "Tender", "2", "12", "0.21"},
+                {"Pear", "Tender", "2", "21", "0.20"},
+                {"Apple", "Tender", "4", "12.2", "0.200"},
+                {"Pear", "Ripe", "2", "12.3", "0.89"},
+                {"Pineapple", "Ripe", "6", "123", "12"},
+                {"Pear", "Tender", "2", "21", "0.20"},
+                {"Apple", "Tender", "4", "12.2", "0.20"},
+                {"Pear", "Ripe", "2", "12.3", "0.89"},
+                {"Strawberry", "Tender", "1", "312", null}
             },
             new String [] {
                 "Name Fruit", "Texture", "Quantity", "Weight", "Cost"

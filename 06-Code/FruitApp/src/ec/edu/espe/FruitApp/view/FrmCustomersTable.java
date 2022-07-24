@@ -1,20 +1,23 @@
 package ec.edu.espe.FruitApp.view;
 
+
+
 import ec.edu.espe.fruitApp.view.FrmAppMenu;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 
+
 /**
  *
- * @author Carlos Granda, DCCO-ESPE, Syntax Error
+ * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
-public class FrmVegetables extends javax.swing.JFrame {
+public class FrmCustomersTable extends javax.swing.JFrame {
 
     /**
-     * Creates new form FrmVegetables
+     * Creates new form FrmCustomers
      */
-    public FrmVegetables() {
+    public FrmCustomersTable() {
         initComponents();
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -39,25 +42,28 @@ public class FrmVegetables extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblVegetables = new javax.swing.JTable();
+        tblCustomers = new javax.swing.JTable();
         btnReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("VEGETABLES");
+        jLabel1.setText("CUSTOMERS");
 
-        tblVegetables.setModel(new javax.swing.table.DefaultTableModel(
+        tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
+                {"jrimbaquinga@espe.edu.ec", "Jose Imbaquinga", "0999819224", "Regular", "2"},
+                {"ro@espe.edu.ec", "Roony Ibarra", "0989787", "Frecuente", "3"},
+                {"carlosgranda@espe.edu.ec", "Carlos Granda", "0997884812", "Regular", "4"},
+                {"Crlos@espe.edu.ec", "carlos granda", "09887845", "Regular", "5"},
+                {"ro@espe.eduec", "Roony Ibarra", "0989787", "Frecuente", "3"},
                 {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
-                "Name Vegetable", "Texture", "Quantity", "Weight", "Cost"
+                "Email", "Full Name", "Cell phone", "Type", "Offer"
             }
         ));
-        jScrollPane1.setViewportView(tblVegetables);
+        jScrollPane1.setViewportView(tblCustomers);
 
         btnReturn.setText("Return");
         btnReturn.addActionListener(new java.awt.event.ActionListener() {
@@ -71,27 +77,27 @@ public class FrmVegetables extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(231, 231, 231)
-                        .addComponent(btnReturn)))
+                .addGap(240, 240, 240)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnReturn)
+                .addGap(222, 222, 222))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnReturn)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(btnReturn))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -119,7 +125,8 @@ public class FrmVegetables extends javax.swing.JFrame {
         am.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnReturnActionPerformed
-
+  
+    
     /**
      * @param args the command line arguments
      */
@@ -137,20 +144,21 @@ public class FrmVegetables extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmVegetables.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCustomersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmVegetables.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCustomersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmVegetables.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCustomersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmVegetables.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCustomersTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmVegetables().setVisible(true);
+                new FrmCustomersTable().setVisible(true);
             }
         });
     }
@@ -160,6 +168,6 @@ public class FrmVegetables extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblVegetables;
+    private javax.swing.JTable tblCustomers;
     // End of variables declaration//GEN-END:variables
 }

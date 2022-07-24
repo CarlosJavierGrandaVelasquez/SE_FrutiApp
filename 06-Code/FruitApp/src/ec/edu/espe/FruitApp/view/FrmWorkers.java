@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package ec.edu.espe.FruitApp.view;
 
 import ec.edu.espe.fruitApp.view.FrmAppMenu;
@@ -11,7 +8,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Carlos Granda, DCCO-ESPE, Syntax Error
+ * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class FrmWorkers extends javax.swing.JFrame {
 
@@ -63,8 +60,8 @@ public class FrmWorkers extends javax.swing.JFrame {
 
         tblWorkers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
+                {"Carlos Granda", "17121", "1712951055"},
+                {"Jose Imbaquinga", "1212", "1718193145"},
                 {null, null, null},
                 {null, null, null}
             },

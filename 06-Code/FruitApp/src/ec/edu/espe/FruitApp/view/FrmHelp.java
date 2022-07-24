@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Carlos Granda, DCCO-ESPE, Syntax Error
+ * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class FrmHelp extends javax.swing.JFrame {
 

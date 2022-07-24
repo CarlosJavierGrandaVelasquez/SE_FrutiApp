@@ -1,10 +1,10 @@
-
 package ec.edu.espe.FruitApp.controller;
-
 import ec.edu.espe.FruitApp.model.ConexionDB;
 import com.mongodb.client.MongoCollection;
 import javax.swing.table.DefaultTableModel;
-import org.bson.Document;
+import javax.swing.text.Document;
+
+
 
 /**
  *
@@ -14,15 +14,15 @@ public class ConexionMongoDBCustomer {
       
    
     public void ConexionCustomer(String email, String fullName, int cellPhone, String type, String offter, String totalSale){
-        MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
+        MongoCollection<org.bson.Document> FruitCollection = new ConexionDB().GetDB().
                  getCollection("FruitCollection");
-     Document data= new Document();  
+        org.bson.Document data= new org.bson.Document(); 
       DefaultTableModel tabla = new DefaultTableModel(){
          @Override
          public boolean isCellEditable(int row, int column) {
              return super.isCellEditable(row, column);
          }
-     };  
+     }; 
         
         data.put("Customer","");
         data.put("Id",email);

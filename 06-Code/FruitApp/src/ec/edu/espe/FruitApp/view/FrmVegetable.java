@@ -1,6 +1,6 @@
 package ec.edu.espe.fruitApp.view;
 
-import ec.edu.espe.FruitApp.controller.ConexionMongoDBVerdure;
+import ec.edu.espe.FruitApp.controller.ConexionMongoDBVegetable;
 import ec.edu.espe.fruitApp.controller.VegetableController;
 import ec.edu.espe.fruitApp.model.Vegetable;
 import java.awt.Image;
@@ -17,12 +17,14 @@ public class FrmVegetable extends javax.swing.JFrame {
     /**
      * Creates new form FrmFruit
      */
+    
     public FrmVegetable() {
         initComponents();
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
         setLocationRelativeTo(null);
+
     }
     
     @Override
@@ -70,6 +72,11 @@ public class FrmVegetable extends javax.swing.JFrame {
         });
 
         btnRemove.setText("REMOVE");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
 
         btnReturn.setText("RETURN");
         btnReturn.addActionListener(new java.awt.event.ActionListener() {
@@ -108,12 +115,17 @@ public class FrmVegetable extends javax.swing.JFrame {
         lblName.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         lblName.setText("Name of vegetable: ");
 
-        cmbName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corn", "Broccoli", "Tomato", "Carrot", "Avocado", "Lettuce", "Garlic", "Cucumber", "Turnip", "Onion", " " }));
+        cmbName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Corn", "Broccoli", "Tomato", "Carrot", "Avocado", "Lettuce", "Garlic", "Cucumber", "Turnip", "Onion", " " }));
+        cmbName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbNameActionPerformed(evt);
+            }
+        });
 
         lblTexture.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblTexture.setText("Texture of vegetable:");
 
-        cmbTexture.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ripe", "Tender" }));
+        cmbTexture.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Ripe", "Tender" }));
 
         lblQuantity.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblQuantity.setText("Quantity:");
@@ -274,20 +286,33 @@ public class FrmVegetable extends javax.swing.JFrame {
         
         vegetableController.register(vegetable, this);
         
-         ConexionMongoDBVerdure conexionMongoDb = new ConexionMongoDBVerdure();
-        conexionMongoDb.ConexionVerdure(name, texture, quantity, weight, cost);
+         ConexionMongoDBVegetable conexionMongoDb = new ConexionMongoDBVegetable();
+        conexionMongoDb.ConexionVegetable(name, texture, quantity, weight, cost);
+        txtCost.setText(("0."));
+        txtWeight.setText("");
+        spnQuantity.setValue(0);
+        cmbName.setSelectedItem(0);
+        cmbTexture.setSelectedIndex(0);
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void txtWeightKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtWeightKeyPressed
         String value = txtWeight.getText();
         int length = value.length();
-        if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9' ){
+        int key = evt.getKeyChar();
+        boolean delete = key == 8;
+        boolean dot = key == 46;
+        
+        if((evt.getKeyChar() >= '0' && evt.getKeyChar()<='9')||(delete) ||(dot)){
             txtWeight.setEditable(true);
             lblWeightError.setText("");
-            if(length>=10){
-                txtWeight.setEditable(false);
-                lblWeightError.setText("Max 10 digits");
+            if(delete){
+                txtWeight.setEditable(true);
             }
+            else if(length>=4){
+                txtWeight.setEditable(false);
+                lblWeightError.setText("Max 4 digits");
+         }
+        
         }else{
             txtWeight.setEditable(false);
             lblWeightError.setText("*Enter only digits (0 - 9)");
@@ -300,15 +325,27 @@ public class FrmVegetable extends javax.swing.JFrame {
         if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9' ){
             txtCost.setEditable(true);
             lblCostError.setText("");
-            if(length>=3){
+            if(length>=4){
                 txtCost.setEditable(false);
-                lblCostError.setText("Max 3 digits");
+                lblCostError.setText("Max 4 digits");
             }
         }else{
             txtCost.setEditable(false);
             lblCostError.setText("*Enter only digits (0 - 9)");
         }
     }//GEN-LAST:event_txtCostKeyPressed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        txtCost.setText(("0."));
+        txtWeight.setText("");
+        spnQuantity.setValue(0);
+        cmbName.setSelectedItem(0);
+        cmbTexture.setSelectedIndex(0);
+    }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void cmbNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbNameActionPerformed
 
     /**
      * @param args the command line arguments

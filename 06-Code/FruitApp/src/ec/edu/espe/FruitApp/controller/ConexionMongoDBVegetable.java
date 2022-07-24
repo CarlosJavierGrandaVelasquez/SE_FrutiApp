@@ -10,8 +10,8 @@ import org.bson.Document;
  *
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
-public class ConexionMongoDBVerdure {
-     public void ConexionVerdure(String name, String texture, int quantity, double weight, float cost){
+public class ConexionMongoDBVegetable {
+     public void ConexionVegetable(String name, String texture, int quantity, double weight, float cost){
         MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
                  getCollection("FruitCollection");
      Document data= new Document();  

@@ -1,10 +1,10 @@
 
 package ec.edu.espe.fruitApp.view;
 
-import ec.edu.espe.FruitApp.view.FrmCustomers;
+import ec.edu.espe.FruitApp.view.FrmCustomersTable;
 import ec.edu.espe.FruitApp.view.FrmFruits;
 import ec.edu.espe.FruitApp.view.FrmHelp;
-import ec.edu.espe.FruitApp.view.FrmVegetables;
+import ec.edu.espe.FruitApp.view.FrmVegetablesTable;
 import ec.edu.espe.FruitApp.view.FrmWorkers;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -65,7 +65,7 @@ public class FrmAppMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblFruitApp.setFont(new java.awt.Font("Viner Hand ITC", 1, 18)); // NOI18N
-        lblFruitApp.setText("FRUIT APP");
+        lblFruitApp.setText("FRUIT APP 2.0.0");
 
         mnuApp.setText("FRUIT APP");
 
@@ -129,10 +129,10 @@ public class FrmAppMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuShop);
 
-        mnuRegister.setText("REGISTER");
+        mnuRegister.setText("Worker");
 
         mnuiRegister.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        mnuiRegister.setText("Register");
+        mnuiRegister.setText("Worker");
         mnuiRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuiRegisterActionPerformed(evt);
@@ -204,7 +204,7 @@ public class FrmAppMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(185, 185, 185)
                 .addComponent(lblFruitApp)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,13 +268,13 @@ public class FrmAppMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmFruitsActionPerformed
 
     private void itmVegetablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmVegetablesActionPerformed
-        FrmVegetables vegetables = new FrmVegetables();
+        FrmVegetablesTable vegetables = new FrmVegetablesTable();
         vegetables.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_itmVegetablesActionPerformed
 
     private void itmCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCustomersActionPerformed
-        FrmCustomers customers = new FrmCustomers();
+        FrmCustomersTable customers = new FrmCustomersTable();
         customers.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_itmCustomersActionPerformed
