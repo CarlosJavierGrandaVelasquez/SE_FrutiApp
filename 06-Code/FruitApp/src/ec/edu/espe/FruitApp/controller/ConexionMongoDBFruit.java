@@ -1,4 +1,3 @@
-
 package ec.edu.espe.FruitApp.controller;
 
 import com.mongodb.client.MongoCollection;
@@ -30,3 +29,4 @@ public class ConexionMongoDBFruit {
         FruitCollection.insertOne(data);
     }
 }
+

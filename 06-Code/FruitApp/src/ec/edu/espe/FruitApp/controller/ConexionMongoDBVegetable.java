@@ -30,3 +30,4 @@ public class ConexionMongoDBVegetable {
         FruitCollection.insertOne(data);
     }
 }
+

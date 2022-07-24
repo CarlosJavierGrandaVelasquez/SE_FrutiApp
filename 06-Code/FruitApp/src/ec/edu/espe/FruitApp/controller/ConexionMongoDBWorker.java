@@ -11,7 +11,7 @@ import org.bson.Document;
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class ConexionMongoDBWorker {
-   public void ConexionWorker(String name, String code, int id){
+   public void ConexionWorker(String name, String code,  int id){
         MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
                  getCollection("FruitCollection");
      Document data= new Document();  
@@ -27,4 +27,5 @@ public class ConexionMongoDBWorker {
         data.put("Id:",id);
         FruitCollection.insertOne(data);
     } 
+   
 }
