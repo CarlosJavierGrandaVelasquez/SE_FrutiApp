@@ -62,8 +62,8 @@ public class FrmWorkers extends javax.swing.JFrame {
             new Object [][] {
                 {"Carlos Granda", "17121", "1712951055"},
                 {"Jose Imbaquinga", "1212", "1718193145"},
-                {null, null, null},
-                {null, null, null}
+                {"Carolina Vargas", "0012", "1734238233"},
+                {"Wendy Cueva", "00123", null}
             },
             new String [] {
                 "Name", "Code", "Id"
