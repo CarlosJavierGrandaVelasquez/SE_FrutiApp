@@ -12,8 +12,8 @@ import org.bson.Document;
 public class ConexionMongoDBCustomer {
       
    
-    public void ConexionCustomer(String email, String fullName, int cellPhone, String type, String offter, String totalSale){
-        MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
+    public void ConexionCustomer(String email, String fullName, int cellPhone, String type, String offter){
+        MongoCollection<Document> FruitCollection = new ConexionDB().conectionDb().
                  getCollection("CustomerCollection");
      Document data= new Document();  
       DefaultTableModel tabla = new DefaultTableModel(){
@@ -23,12 +23,11 @@ public class ConexionMongoDBCustomer {
          }
      };  
         
-        data.put("Id",email);
+        data.put("Email",email);
         data.put("Full Name",fullName);
-        data.put("Email:",+cellPhone);
+        data.put("CellPhone:",+cellPhone);
         data.put("Type",type);
-        data.put("Float",offter);
-        data.put("Total Sale",totalSale);
+        data.put("Offter",offter);
         FruitCollection.insertOne(data);
 
     }

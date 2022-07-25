@@ -12,7 +12,7 @@ import org.bson.Document;
  */
 public class ConexionMongoDBWorker {
    public void ConexionWorker(String name, String code,  int id){
-        MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
+        MongoCollection<Document> FruitCollection = new ConexionDB().conectionDb().
                  getCollection("WorkerCollection");
      Document data= new Document();  
       DefaultTableModel tabla = new DefaultTableModel(){

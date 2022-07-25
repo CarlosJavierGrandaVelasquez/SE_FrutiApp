@@ -12,8 +12,8 @@ import org.bson.Document;
  */
 public class ConexionMongoDBVegetable {
      public void ConexionVegetable(String name, String texture, int quantity, double weight, float cost){
-        MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
-                 getCollection("VerdureCollection");
+        MongoCollection<Document> FruitCollection = new ConexionDB().conectionDb().
+                 getCollection("VegetableCollection");
      Document data= new Document();  
       DefaultTableModel tabla = new DefaultTableModel(){
          @Override

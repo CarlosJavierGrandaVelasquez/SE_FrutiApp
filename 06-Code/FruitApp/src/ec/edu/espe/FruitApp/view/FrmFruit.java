@@ -28,15 +28,7 @@ public class FrmFruit extends javax.swing.JFrame {
         setIconImage(getIconImage());
         setLocationRelativeTo(null);
 
-         MongoCollection<Document> FruitCollection = new ConexionDB().SetDB().
-                 getCollection("CustomerCollection");
-     Document data= new Document();  
-      DefaultTableModel tabla = new DefaultTableModel(){
-         @Override
-         public boolean isCellEditable(int row, int column) {
-             return super.isCellEditable(row, column);
-         }
-     };  
+        
         
     }
 

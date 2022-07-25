@@ -11,15 +11,13 @@ public class Customer {
     private int cellPhone;
     private String type;
     private String discount;
-    private String totalSale;
 
-    public Customer(String email, String fullName, int cellPhone, String type, String discount, String totalSale) {
+    public Customer(String email, String fullName, int cellPhone, String type, String discount) {
         this.email = email;
         this.fullName = fullName;
         this.cellPhone = cellPhone;
         this.type = type;
         this.discount = discount;
-        this.totalSale = totalSale;
     }
 
     public String getEmail() {
@@ -62,14 +60,7 @@ public class Customer {
         this.discount = discount;
     }
 
-    public String getTotalSale() {
-        return totalSale;
-    }
-
-    public void setTotalSale(String totalSale) {
-        this.totalSale = totalSale;
-    }
-    
+   
 
     
     

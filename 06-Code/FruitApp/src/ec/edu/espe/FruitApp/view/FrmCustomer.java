@@ -267,7 +267,6 @@ public class FrmCustomer extends javax.swing.JFrame {
         int cellPhone;
         String type;
         String offer;
-        String totalSale = null;
         
         
         CustomerController customerController;
@@ -281,9 +280,9 @@ public class FrmCustomer extends javax.swing.JFrame {
         
         //erCollection.insertOne(document);
         if ((0!=cmbCustomerType.getSelectedIndex())){
-          customer = new Customer(email, fullName, cellPhone, type, offer, totalSale);
+          customer = new Customer(email, fullName, cellPhone, type, offer );
           ConexionMongoDBCustomer conexionMongoDb= new ConexionMongoDBCustomer();
-          conexionMongoDb.ConexionCustomer(email, fullName, cellPhone, type, offer, totalSale);
+          conexionMongoDb.ConexionCustomer(email, fullName, cellPhone, type, offer );
           customerController.register(customer, this);
           txtFullName.setText("");
           txtCellPhone.setText("");

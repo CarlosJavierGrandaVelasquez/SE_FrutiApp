@@ -11,7 +11,7 @@ import org.bson.Document;
  */
 public class ConexionMongoDBFruit {
     public void ConexionFruit(String name, String texture, int quantity, double weight, float cost){
-        MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
+        MongoCollection<Document> FruitCollection = new ConexionDB().conectionDb().
                  getCollection("FruitCollection");
      Document data= new Document();  
       DefaultTableModel tabla = new DefaultTableModel(){
