@@ -1,9 +1,30 @@
 package ec.edu.espe.FruitApp.view;
 
+
+
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoDatabase;
+import ec.edu.espe.FruitApp.model.ConexionDB;
 import ec.edu.espe.fruitApp.view.FrmAppMenu;
 import java.awt.Image;
 import java.awt.Toolkit;
+
 import javax.swing.JFrame;
+import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
+import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
+import org.bson.codecs.configuration.CodecRegistry;
+import org.bson.codecs.pojo.PojoCodecProvider;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import ec.edu.espe.fruitApp.model.Customer;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import org.bson.Document;
+
+
 
 /**
  *
@@ -19,8 +40,10 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
+        
     }
 
+    
     @Override
         public Image getIconImage(){
             Image retValue=Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagen/Simbolo.png"));
@@ -37,29 +60,13 @@ public class FrmCustomersTable extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        btnReturn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCustomers = new javax.swing.JTable();
-        btnReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("CUSTOMERS");
-
-        tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"jrimbaquinga@espe.edu.ec", "Jose Imbaquinga", "0999819224", "Regular", "2"},
-                {"ro@espe.edu.ec", "Roony Ibarra", "0989787", "Frecuente", "3"},
-                {"carlosgranda@espe.edu.ec", "Carlos Granda", "0997884812", "Regular", "4"},
-                {"Crlos@espe.edu.ec", "carlos granda", "09887845", "Regular", "5"},
-                {"ro@espe.eduec", "Roony Ibarra", "0989787", "Frecuente", "3"},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Email", "Full Name", "Cell phone", "Type", "Offer"
-            }
-        ));
-        jScrollPane1.setViewportView(tblCustomers);
 
         btnReturn.setText("Return");
         btnReturn.addActionListener(new java.awt.event.ActionListener() {
@@ -68,31 +75,46 @@ public class FrmCustomersTable extends javax.swing.JFrame {
             }
         });
 
+        tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"jrimbaquinga@espe.edu.ec", "Jose Ricardo Imbaquinga Guaña", "0999819224", "Normal", "3"},
+                {"carlosganda@espe.edu.ec", "Carlos Granda", "099988978", "Regular", "1"},
+                {"roibarra@espe.edu.ec", "Roony Ibarra", "09876545", "Normal", "2"},
+                {"javierfernandez@gmail.com", "Javier Fernandes", "0987874", "Normal", null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Email", "Full Name", "CellPhone", "Type", "Offter"
+            }
+        ));
+        jScrollPane1.setViewportView(tblCustomers);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(240, 240, 240)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnReturn)
-                .addGap(222, 222, 222))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(500, 500, 500)
+                            .addComponent(jLabel1))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnReturn)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(212, 212, 212)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addComponent(btnReturn))
         );
 
@@ -121,7 +143,8 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         am.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnReturnActionPerformed
-
+  
+    
     /**
      * @param args the command line arguments
      */

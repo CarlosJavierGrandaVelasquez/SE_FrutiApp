@@ -20,6 +20,7 @@ public class FrmFruits extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
+        setLocationRelativeTo(null);
     }
     
     @Override
@@ -49,16 +50,14 @@ public class FrmFruits extends javax.swing.JFrame {
 
         tblFruits.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Orange", "Tender", "3", "2.5", "0.25"},
-                {"Strawberry", "Tender", "2", "12", "0.21"},
-                {"Pear", "Tender", "2", "21", "0.20"},
-                {"Apple", "Tender", "4", "12.2", "0.200"},
-                {"Pear", "Ripe", "2", "12.3", "0.89"},
-                {"Pineapple", "Ripe", "6", "123", "12"},
-                {"Pear", "Tender", "2", "21", "0.20"},
-                {"Apple", "Tender", "4", "12.2", "0.20"},
-                {"Pear", "Ripe", "2", "12.3", "0.89"},
-                {"Strawberry", "Tender", "1", "312", null}
+                {"Apple", "Ripe", "1", "2", "0.10"},
+                {"Pear", "Ripe", "3", "2", "0.5"},
+                {"Apple ", "Tender", "1", "1", "0.5"},
+                {"Orange", "Ripe", "2", "2", "0.69"},
+                {"Coconut", "Tender", "3", "2", "0.89"},
+                {"Papaya", "Ripe", "1", "1", "0.60"},
+                {"Strawberry", "Tender", "2", "1", "0.69"},
+                {"Corn", "Ripe", "2", "1", null}
             },
             new String [] {
                 "Name Fruit", "Texture", "Quantity", "Weight", "Cost"

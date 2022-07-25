@@ -1,7 +1,8 @@
+
 package ec.edu.espe.FruitApp.controller;
 
-import ec.edu.espe.FruitApp.model.ConexionDB;
 import com.mongodb.client.MongoCollection;
+import ec.edu.espe.FruitApp.model.ConexionDB;
 import javax.swing.table.DefaultTableModel;
 import org.bson.Document;
 
@@ -9,12 +10,10 @@ import org.bson.Document;
  *
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
-public class ConexionMongoDBCustomer {
-      
-   
-    public void ConexionCustomer(String email, String fullName, int cellPhone, String type, String offter){
+public class ConexionMongoDBVegetable {
+     public void ConexionVegetable(String name, String texture, int quantity, double weight, float cost){
         MongoCollection<Document> FruitCollection = new ConexionDB().conectionDb().
-                 getCollection("CustomerCollection");
+                 getCollection("VegetableCollection");
      Document data= new Document();  
       DefaultTableModel tabla = new DefaultTableModel(){
          @Override
@@ -22,15 +21,12 @@ public class ConexionMongoDBCustomer {
              return super.isCellEditable(row, column);
          }
      };  
-        
-        data.put("Email",email);
-        data.put("Full Name",fullName);
-        data.put("CellPhone:",+cellPhone);
-        data.put("Type",type);
-        data.put("Offter",offter);
+        data.put("Name",name);
+        data.put("Texure",texture);
+        data.put("Quantity:",+quantity);
+        data.put("Weight:",weight);
+        data.put("Float",cost);
         FruitCollection.insertOne(data);
-
     }
-    
- 
 }
+

@@ -1,4 +1,3 @@
-
 package ec.edu.espe.FruitApp.controller;
 
 import com.mongodb.client.MongoCollection;
@@ -12,7 +11,7 @@ import org.bson.Document;
  */
 public class ConexionMongoDBFruit {
     public void ConexionFruit(String name, String texture, int quantity, double weight, float cost){
-        MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
+        MongoCollection<Document> FruitCollection = new ConexionDB().conectionDb().
                  getCollection("FruitCollection");
      Document data= new Document();  
       DefaultTableModel tabla = new DefaultTableModel(){
@@ -21,7 +20,6 @@ public class ConexionMongoDBFruit {
              return super.isCellEditable(row, column);
          }
      };  
-        data.put("Fruit","");
         data.put("Name",name);
         data.put("Texure",texture);
         data.put("Quantity:",+quantity);
@@ -30,3 +28,4 @@ public class ConexionMongoDBFruit {
         FruitCollection.insertOne(data);
     }
 }
+

@@ -9,13 +9,7 @@ import javax.swing.JOptionPane;
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class CustomerController {
-/*   
-    register();
-    sell();
-    assingType();
-    computeDiscount();
-    addSale();
-*/
+
     public boolean register(Customer customer, JFrame frmFrame){
         
         String message;

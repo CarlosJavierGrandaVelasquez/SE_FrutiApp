@@ -1,12 +1,16 @@
 
 package ec.edu.espe.fruitApp.view;
 
+import com.mongodb.client.MongoCollection;
 import ec.edu.espe.FruitApp.controller.ConexionMongoDBFruit;
+import ec.edu.espe.FruitApp.model.ConexionDB;
 import ec.edu.espe.fruitApp.controller.FruitController;
 import ec.edu.espe.fruitApp.model.Fruit;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+import org.bson.Document;
 
 /**
  *
@@ -22,8 +26,10 @@ public class FrmFruit extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
-        final String cost=("0.");
-        txtCost.setText(cost);
+        setLocationRelativeTo(null);
+
+        
+        
     }
 
     @Override
@@ -293,7 +299,9 @@ public class FrmFruit extends javax.swing.JFrame {
 
     private void txtWeightKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtWeightKeyPressed
         String value = txtWeight.getText();
-        int length = value.length();
+        double length = value.length();
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9'){
+        //int length = value.length();
         int key = evt.getKeyChar();
         boolean delete = key == 8;
         boolean dot = key == 46;
@@ -311,13 +319,20 @@ public class FrmFruit extends javax.swing.JFrame {
         
         }else{
             txtWeight.setEditable(false);
-            lblWeightError.setText("*Enter only digits (0 - 9)");
+            lblWeightError.setText("*Enter only digits (0 - 0.99)");
         }
+        txtCost.setText("0.");
+        txtWeight.setText("");
+        cmbName.setSelectedIndex(0);
+        cmbTexture.setSelectedIndex(0);
+        spnQuantity.setValue(0);
     }//GEN-LAST:event_txtWeightKeyPressed
-
+    }
     private void txtCostKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostKeyPressed
         String value = txtCost.getText();
-        int length = value.length();
+        double length = value.length();
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar()<='9' ){
+        //double length = value.length();
         int key = evt.getKeyChar();
         boolean delete = key == 8;
         boolean dot = key == 46;
@@ -333,10 +348,10 @@ public class FrmFruit extends javax.swing.JFrame {
             }
         }else{
             txtCost.setEditable(false);
-            lblCostError.setText("*Enter only digits (0 - 9)");
+            lblCostError.setText("*Enter only digits (0 - 0.99)");
         }
     }//GEN-LAST:event_txtCostKeyPressed
-
+    }
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
         final String cost=("0.");
         txtCost.setText(cost);

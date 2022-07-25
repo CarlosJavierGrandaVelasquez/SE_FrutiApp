@@ -4,7 +4,7 @@ package ec.edu.espe.fruitApp.view;
 import ec.edu.espe.FruitApp.view.FrmCustomersTable;
 import ec.edu.espe.FruitApp.view.FrmFruits;
 import ec.edu.espe.FruitApp.view.FrmHelp;
-import ec.edu.espe.FruitApp.view.FrmVegetables;
+import ec.edu.espe.FruitApp.view.FrmVegetablesTable;
 import ec.edu.espe.FruitApp.view.FrmWorkers;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -24,6 +24,7 @@ public class FrmAppMenu extends javax.swing.JFrame {
         initComponents();
         setTitle("FRUIT APP");
         setIconImage(getIconImage());
+        setLocationRelativeTo(null);
     }
     
     @Override
@@ -267,7 +268,7 @@ public class FrmAppMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmFruitsActionPerformed
 
     private void itmVegetablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmVegetablesActionPerformed
-        FrmVegetables vegetables = new FrmVegetables();
+        FrmVegetablesTable vegetables = new FrmVegetablesTable();
         vegetables.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_itmVegetablesActionPerformed
