@@ -14,7 +14,7 @@ public class ConexionMongoDBCustomer {
    
     public void ConexionCustomer(String email, String fullName, int cellPhone, String type, String offter, String totalSale){
         MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
-                 getCollection("FruitCollection");
+                 getCollection("CustomerCollection");
      Document data= new Document();  
       DefaultTableModel tabla = new DefaultTableModel(){
          @Override
@@ -23,7 +23,6 @@ public class ConexionMongoDBCustomer {
          }
      };  
         
-        data.put("Customer","");
         data.put("Id",email);
         data.put("Full Name",fullName);
         data.put("Email:",+cellPhone);

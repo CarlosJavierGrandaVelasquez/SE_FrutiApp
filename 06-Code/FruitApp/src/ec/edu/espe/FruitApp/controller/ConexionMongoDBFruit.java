@@ -20,7 +20,6 @@ public class ConexionMongoDBFruit {
              return super.isCellEditable(row, column);
          }
      };  
-        data.put("Fruit","");
         data.put("Name",name);
         data.put("Texure",texture);
         data.put("Quantity:",+quantity);

@@ -5,7 +5,10 @@ package ec.edu.espe.FruitApp.view;
 import ec.edu.espe.fruitApp.view.FrmAppMenu;
 import java.awt.Image;
 import java.awt.Toolkit;
+
 import javax.swing.JFrame;
+
+
 
 
 /**
@@ -22,7 +25,7 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
-        setLocationRelativeTo(null);
+        
     }
 
     @Override
@@ -51,11 +54,6 @@ public class FrmCustomersTable extends javax.swing.JFrame {
 
         tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"jrimbaquinga@espe.edu.ec", "Jose Imbaquinga", "0999819224", "Regular", "2"},
-                {"ro@espe.edu.ec", "Roony Ibarra", "0989787", "Frecuente", "3"},
-                {"carlosgranda@espe.edu.ec", "Carlos Granda", "0997884812", "Regular", "4"},
-                {"Crlos@espe.edu.ec", "carlos granda", "09887845", "Regular", "5"},
-                {"ro@espe.eduec", "Roony Ibarra", "0989787", "Frecuente", "3"},
                 {null, null, null, null, null},
                 {null, null, null, null, null}
             },
@@ -124,6 +122,7 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         FrmAppMenu am = new FrmAppMenu();
         am.setVisible(true);
         this.dispose();
+        tblCustomers.setValueAt(am, ERROR, NORMAL);
     }//GEN-LAST:event_btnReturnActionPerformed
   
     

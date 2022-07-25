@@ -13,7 +13,7 @@ import org.bson.Document;
 public class ConexionMongoDBVegetable {
      public void ConexionVegetable(String name, String texture, int quantity, double weight, float cost){
         MongoCollection<Document> FruitCollection = new ConexionDB().GetDB().
-                 getCollection("FruitCollection");
+                 getCollection("VerdureCollection");
      Document data= new Document();  
       DefaultTableModel tabla = new DefaultTableModel(){
          @Override
@@ -21,7 +21,6 @@ public class ConexionMongoDBVegetable {
              return super.isCellEditable(row, column);
          }
      };  
-        data.put("Verdure","");
         data.put("Name",name);
         data.put("Texure",texture);
         data.put("Quantity:",+quantity);

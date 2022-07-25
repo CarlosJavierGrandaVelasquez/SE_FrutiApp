@@ -1,12 +1,16 @@
 
 package ec.edu.espe.fruitApp.view;
 
+import com.mongodb.client.MongoCollection;
 import ec.edu.espe.FruitApp.controller.ConexionMongoDBFruit;
+import ec.edu.espe.FruitApp.model.ConexionDB;
 import ec.edu.espe.fruitApp.controller.FruitController;
 import ec.edu.espe.fruitApp.model.Fruit;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+import org.bson.Document;
 
 /**
  *
@@ -24,6 +28,16 @@ public class FrmFruit extends javax.swing.JFrame {
         setIconImage(getIconImage());
         setLocationRelativeTo(null);
 
+         MongoCollection<Document> FruitCollection = new ConexionDB().SetDB().
+                 getCollection("CustomerCollection");
+     Document data= new Document();  
+      DefaultTableModel tabla = new DefaultTableModel(){
+         @Override
+         public boolean isCellEditable(int row, int column) {
+             return super.isCellEditable(row, column);
+         }
+     };  
+        
     }
 
     @Override

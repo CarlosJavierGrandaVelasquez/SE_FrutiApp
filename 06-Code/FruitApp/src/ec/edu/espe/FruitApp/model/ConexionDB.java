@@ -23,5 +23,7 @@ MongoDatabase database = mongoClient.getDatabase("FruitDB");
 public MongoDatabase GetDB(){
     return database;
 }
-
+public MongoDatabase SetDB(){
+  return database;  
+} 
 }

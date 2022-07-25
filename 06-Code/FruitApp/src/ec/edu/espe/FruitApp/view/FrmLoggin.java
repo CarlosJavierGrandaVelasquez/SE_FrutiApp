@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Carlos Granda, DCCO-ESPE, Syntax Error
+ * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class FrmLoggin extends javax.swing.JFrame {
 

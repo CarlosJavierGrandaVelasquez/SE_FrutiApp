@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -92,52 +92,12 @@
             <Component class="javax.swing.JTable" name="tblCustomers">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="5" rowCount="7">
-                    <Column editable="true" title="Email" type="java.lang.Object">
-                      <Data value="jrimbaquinga@espe.edu.ec"/>
-                      <Data value="ro@espe.edu.ec"/>
-                      <Data value="carlosgranda@espe.edu.ec"/>
-                      <Data value="Crlos@espe.edu.ec"/>
-                      <Data value="ro@espe.eduec"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Full Name" type="java.lang.Object">
-                      <Data value="Jose Imbaquinga"/>
-                      <Data value="Roony Ibarra"/>
-                      <Data value="Carlos Granda"/>
-                      <Data value="carlos granda"/>
-                      <Data value="Roony Ibarra"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Cell phone" type="java.lang.Object">
-                      <Data value="0999819224"/>
-                      <Data value="0989787"/>
-                      <Data value="0997884812"/>
-                      <Data value="09887845"/>
-                      <Data value="0989787"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Type" type="java.lang.Object">
-                      <Data value="Regular"/>
-                      <Data value="Frecuente"/>
-                      <Data value="Regular"/>
-                      <Data value="Regular"/>
-                      <Data value="Frecuente"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
-                    <Column editable="true" title="Offer" type="java.lang.Object">
-                      <Data value="2"/>
-                      <Data value="3"/>
-                      <Data value="4"/>
-                      <Data value="5"/>
-                      <Data value="3"/>
-                      <Data value="null"/>
-                      <Data value="null"/>
-                    </Column>
+                  <Table columnCount="5" rowCount="2">
+                    <Column editable="true" title="Email" type="java.lang.Object"/>
+                    <Column editable="true" title="Full Name" type="java.lang.Object"/>
+                    <Column editable="true" title="Cell phone" type="java.lang.Object"/>
+                    <Column editable="true" title="Type" type="java.lang.Object"/>
+                    <Column editable="true" title="Offer" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
