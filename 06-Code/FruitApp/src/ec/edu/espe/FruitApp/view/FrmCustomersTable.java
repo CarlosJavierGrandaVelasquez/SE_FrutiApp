@@ -43,35 +43,7 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         
     }
 
-     public void loadCustomersTable() {
-       
-       
-        CodecRegistry codecRegistry = fromRegistries(MongoClient.getDefaultCodecRegistry(),
-                fromProviders(PojoCodecProvider.builder().automatic(true).build()));
-        MongoDatabase db = ConexionDB.database.withCodecRegistry(codecRegistry);
-        MongoCollection<Customer> collectionCustomers = db.getCollection("CustomerCollection", Customer.class); 
-        List<Customer> customers = collectionCustomers.find(new Document(), Customer.class).into(new ArrayList<Customer>());
-
-        Object[][] objects = new Object[customers.size()][5];
-
-        for (int i = 0; i < customers.size(); i++) {
-            objects[i][0] = customers.get(i).getEmail();
-            objects[i][1] = customers.get(i).getFullName();
-            objects[i][2] = customers.get(i).getCellPhone();
-            objects[i][3] = customers.get(i).getType();
-            objects[i][4] = customers.get(i).getDiscount();
-            
-
-            tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
-                    objects,
-                    new String[]{
-                        "Email", "FullName", "Cell Phone", "Type", "TotalSale", 
-                    }
-            ));
-
-        }
-
-    }
+    
     @Override
         public Image getIconImage(){
             Image retValue=Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagen/Simbolo.png"));
@@ -91,7 +63,6 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         btnReturn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCustomers = new javax.swing.JTable();
-        btnLoad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,13 +89,6 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblCustomers);
 
-        btnLoad.setText("Load");
-        btnLoad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoadActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -137,8 +101,6 @@ public class FrmCustomersTable extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnLoad)
-                            .addGap(136, 136, 136)
                             .addComponent(btnReturn)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(212, 212, 212)
@@ -154,10 +116,6 @@ public class FrmCustomersTable extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
                 .addComponent(btnReturn))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnLoad)
-                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -185,10 +143,6 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         am.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnReturnActionPerformed
-
-    private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
-        loadCustomersTable();
-    }//GEN-LAST:event_btnLoadActionPerformed
   
     
     /**
@@ -228,7 +182,6 @@ public class FrmCustomersTable extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLoad;
     private javax.swing.JButton btnReturn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
