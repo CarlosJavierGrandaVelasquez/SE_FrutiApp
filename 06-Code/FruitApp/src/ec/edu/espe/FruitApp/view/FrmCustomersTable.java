@@ -106,10 +106,10 @@ public class FrmCustomersTable extends javax.swing.JFrame {
 
         tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
+                {"jrimbaquinga@espe.edu.ec", "Jose Ricardo Imbaquinga Guaña", "0999819224", "Normal", "3"},
+                {"carlosganda@espe.edu.ec", "Carlos Granda", "099988978", "Regular", "1"},
+                {"roibarra@espe.edu.ec", "Roony Ibarra", "09876545", "Normal", "2"},
+                {"javierfernandez@gmail.com", "Javier Fernandes", "0987874", "Normal", null},
                 {null, null, null, null, null}
             },
             new String [] {

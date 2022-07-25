@@ -112,11 +112,41 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="5" rowCount="5">
-                    <Column editable="true" title="Email" type="java.lang.Object"/>
-                    <Column editable="true" title="Full Name" type="java.lang.Object"/>
-                    <Column editable="true" title="CellPhone" type="java.lang.Object"/>
-                    <Column editable="true" title="Type" type="java.lang.Object"/>
-                    <Column editable="true" title="Offter" type="java.lang.Object"/>
+                    <Column editable="true" title="Email" type="java.lang.Object">
+                      <Data value="jrimbaquinga@espe.edu.ec"/>
+                      <Data value="carlosganda@espe.edu.ec"/>
+                      <Data value="roibarra@espe.edu.ec"/>
+                      <Data value="javierfernandez@gmail.com"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Full Name" type="java.lang.Object">
+                      <Data value="Jose Ricardo Imbaquinga Gua&#xf1;a"/>
+                      <Data value="Carlos Granda"/>
+                      <Data value="Roony Ibarra"/>
+                      <Data value="Javier Fernandes"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="CellPhone" type="java.lang.Object">
+                      <Data value="0999819224"/>
+                      <Data value="099988978"/>
+                      <Data value="09876545"/>
+                      <Data value="0987874"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Type" type="java.lang.Object">
+                      <Data value="Normal"/>
+                      <Data value="Regular"/>
+                      <Data value="Normal"/>
+                      <Data value="Normal"/>
+                      <Data value="null"/>
+                    </Column>
+                    <Column editable="true" title="Offter" type="java.lang.Object">
+                      <Data value="3"/>
+                      <Data value="1"/>
+                      <Data value="2"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                    </Column>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
