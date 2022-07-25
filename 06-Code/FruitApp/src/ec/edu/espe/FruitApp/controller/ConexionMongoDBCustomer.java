@@ -19,7 +19,7 @@ public class ConexionMongoDBCustomer {
       DefaultTableModel tabla = new DefaultTableModel(){
          @Override
          public boolean isCellEditable(int row, int column) {
-             return super.isCellEditable(row, column);  
+             return super.isCellEditable(row, column);   
          }
      };  
         
