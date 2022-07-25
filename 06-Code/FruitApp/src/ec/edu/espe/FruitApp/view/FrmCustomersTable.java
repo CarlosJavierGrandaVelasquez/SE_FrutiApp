@@ -49,7 +49,7 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         CodecRegistry codecRegistry = fromRegistries(MongoClient.getDefaultCodecRegistry(),
                 fromProviders(PojoCodecProvider.builder().automatic(true).build()));
         MongoDatabase db = ConexionDB.database.withCodecRegistry(codecRegistry);
-        MongoCollection<Customer> collectionCustom ers = db.getCollection("CustomerCollection", Customer.class); 
+        MongoCollection<Customer> collectionCustomers = db.getCollection("CustomerCollection", Customer.class); 
         List<Customer> customers = collectionCustomers.find(new Document(), Customer.class).into(new ArrayList<Customer>());
 
         Object[][] objects = new Object[customers.size()][5];
