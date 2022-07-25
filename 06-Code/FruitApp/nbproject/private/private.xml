@@ -4,10 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Usuario%20Pc/Desktop/OPP/SE_FrutiApp/06-Code/FruitApp/src/ec/edu/espe/FruitApp/view/FrmCustomersTable.java</file>
+            <file>file:/C:/Users/Usuario%20Pc/Desktop/OPP/SE_FrutiApp/06-Code/FruitApp/src/ec/edu/espe/FruitApp/view/FrmLoggin.java</file>
             <file>file:/C:/Users/Usuario%20Pc/Desktop/OPP/SE_FrutiApp/06-Code/FruitApp/src/ec/edu/espe/FruitApp/view/FrmVegetable.java</file>
             <file>file:/C:/Users/Usuario%20Pc/Desktop/OPP/SE_FrutiApp/06-Code/FruitApp/src/ec/edu/espe/FruitApp/view/FrmFruits.java</file>
             <file>file:/C:/Users/Usuario%20Pc/Desktop/OPP/SE_FrutiApp/06-Code/FruitApp/src/ec/edu/espe/FruitApp/view/FrmVegetablesTable.java</file>
             <file>file:/C:/Users/Usuario%20Pc/Desktop/OPP/SE_FrutiApp/06-Code/FruitApp/src/ec/edu/espe/FruitApp/controller/ConexionMongoDBVegetable.java</file>
+            <file>file:/C:/Users/Usuario%20Pc/Desktop/OPP/SE_FrutiApp/06-Code/FruitApp/src/utils/DataBaseManager.java</file>
+            <file>file:/C:/Users/Usuario%20Pc/Desktop/OPP/SE_FrutiApp/06-Code/FruitApp/src/utils/DataCustomer.java</file>
             <file>file:/C:/Users/Usuario%20Pc/Desktop/OPP/SE_FrutiApp/06-Code/FruitApp/src/ec/edu/espe/FruitApp/view/FrmWorkers.java</file>
         </group>
     </open-files>
