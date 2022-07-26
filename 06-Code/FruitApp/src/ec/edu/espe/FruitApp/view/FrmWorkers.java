@@ -1,17 +1,18 @@
 
 package ec.edu.espe.FruitApp.view;
 
-import ec.edu.espe.fruitApp.view.FrmAppMenu;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class FrmWorkers extends javax.swing.JFrame {
-
+    private DefaultTableModel modelo;
+    int contador=0;
     /**
      * Creates new form FrmWorkers
      */
@@ -21,6 +22,8 @@ public class FrmWorkers extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
         setLocationRelativeTo(null);
+        CargarInterfaz();
+        CargarDatos();
     }
 
     @Override

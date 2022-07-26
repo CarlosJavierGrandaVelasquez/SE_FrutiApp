@@ -1,6 +1,6 @@
 package ec.edu.espe.FruitApp.view;
 
-import ec.edu.espe.fruitApp.view.FrmAppMenu;
+import ec.edu.espe.FruitApp.view.FrmAppMenu;
 import javax.swing.JOptionPane;
 
 /**

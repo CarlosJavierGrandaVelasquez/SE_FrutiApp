@@ -1,4 +1,4 @@
-package ec.edu.espe.fruitApp.view;
+package ec.edu.espe.FruitApp.view;
 
 import java.awt.Image;
 import java.awt.Toolkit;

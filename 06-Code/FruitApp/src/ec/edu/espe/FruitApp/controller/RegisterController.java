@@ -1,7 +1,7 @@
 package ec.edu.espe.fruitApp.controller;
 
 import ec.edu.espe.fruitApp.model.Worker;
-import ec.edu.espe.fruitApp.view.FrmWorker;
+import ec.edu.espe.FruitApp.view.FrmWorker;
 import javax.swing.JOptionPane;
 
 /**

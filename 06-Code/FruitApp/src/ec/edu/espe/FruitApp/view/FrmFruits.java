@@ -1,17 +1,19 @@
 
 package ec.edu.espe.FruitApp.view;
 
-import ec.edu.espe.fruitApp.view.FrmAppMenu;
+import ec.edu.espe.fruitApp.model.Fruit;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class FrmFruits extends javax.swing.JFrame {
-
+    private DefaultTableModel modelo;
+    int contador=0;
     /**
      * Creates new form FrmFruits
      */
@@ -21,8 +23,30 @@ public class FrmFruits extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
         setLocationRelativeTo(null);
+        CargarInterfaz();
+        CargarDatos();
+    }
+    public void CargarInterfaz(){
+        String datos[][]={};
+        String columnna[]={"Name Fruit","Texture","Quantity","Weight","Cost"};
+        modelo= new DefaultTableModel(datos,columnna);
+        tblFruits.setModel(modelo);
+        
     }
     
+    
+    public void CargarDatos(){
+        Fruit fruit;
+        for(int i = 0;i<FrmFruit.contenedor.size();i++){
+            fruit=(Fruit)FrmFruit.contenedor.get(i);
+            modelo.insertRow(contador, new Object[]{});
+            modelo.setValueAt(fruit.getName(), contador, 0);
+            modelo.setValueAt(fruit.getTexture(), contador, 1);
+            modelo.setValueAt(fruit.getQuantity(), contador, 2);
+            modelo.setValueAt(fruit.getCost(), contador, 3);
+
+        }
+    }
     @Override
         public Image getIconImage(){
             Image retValue=Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagen/Simbolo.png"));
@@ -155,6 +179,9 @@ public class FrmFruits extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FrmFruits.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

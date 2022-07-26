@@ -1,10 +1,11 @@
-package ec.edu.espe.fruitApp.view;
+package ec.edu.espe.FruitApp.view;
 
 import ec.edu.espe.FruitApp.controller.ConexionMongoDBVegetable;
 import ec.edu.espe.fruitApp.controller.VegetableController;
 import ec.edu.espe.fruitApp.model.Vegetable;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.LinkedList;
 import javax.swing.JFrame;
 
 
@@ -17,7 +18,8 @@ public class FrmVegetable extends javax.swing.JFrame {
     /**
      * Creates new form FrmFruit
      */
-    
+    public static LinkedList contenedor= new LinkedList();
+    public int buscar;
     public FrmVegetable() {
         initComponents();
         setTitle("FRUIT APP");

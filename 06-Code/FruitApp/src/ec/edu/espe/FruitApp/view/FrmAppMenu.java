@@ -1,11 +1,7 @@
 
-package ec.edu.espe.fruitApp.view;
+package ec.edu.espe.FruitApp.view;
 
-import ec.edu.espe.FruitApp.view.FrmCustomersTable;
-import ec.edu.espe.FruitApp.view.FrmFruits;
-import ec.edu.espe.FruitApp.view.FrmHelp;
-import ec.edu.espe.FruitApp.view.FrmVegetablesTable;
-import ec.edu.espe.FruitApp.view.FrmWorkers;
+
 import java.awt.Image;
 import java.awt.Toolkit;
 

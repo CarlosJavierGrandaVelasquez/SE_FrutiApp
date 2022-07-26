@@ -1,5 +1,5 @@
 
-package ec.edu.espe.fruitApp.view;
+package ec.edu.espe.FruitApp.view;
 
 import com.mongodb.client.MongoCollection;
 import ec.edu.espe.FruitApp.controller.ConexionMongoDBFruit;
@@ -8,6 +8,7 @@ import ec.edu.espe.fruitApp.controller.FruitController;
 import ec.edu.espe.fruitApp.model.Fruit;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.LinkedList;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import org.bson.Document;
@@ -17,7 +18,7 @@ import org.bson.Document;
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class FrmFruit extends javax.swing.JFrame {
-
+    public static LinkedList contenedor= new LinkedList();
     /**
      * Creates new form FrmFruit
      */
@@ -295,6 +296,10 @@ public class FrmFruit extends javax.swing.JFrame {
         fruitController.register(fruit, this);
         ConexionMongoDBFruit conexionMongoDb = new ConexionMongoDBFruit();
         conexionMongoDb.ConexionFruit(name, texture, quantity, weight, cost);
+        
+        fruit=new Fruit(name, texture, quantity, weight, cost);
+        contenedor.add(fruit);
+        
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void txtWeightKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtWeightKeyPressed
@@ -395,6 +400,9 @@ public class FrmFruit extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FrmFruit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

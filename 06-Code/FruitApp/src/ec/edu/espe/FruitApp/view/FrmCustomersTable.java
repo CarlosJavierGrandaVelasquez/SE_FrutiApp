@@ -2,27 +2,12 @@ package ec.edu.espe.FruitApp.view;
 
 
 
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoDatabase;
-import ec.edu.espe.FruitApp.model.ConexionDB;
-import ec.edu.espe.fruitApp.view.FrmAppMenu;
+
 import java.awt.Image;
 import java.awt.Toolkit;
-
-import javax.swing.JFrame;
-import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
-import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
-import org.bson.codecs.configuration.CodecRegistry;
-import org.bson.codecs.pojo.PojoCodecProvider;
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
 import ec.edu.espe.fruitApp.model.Customer;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import org.bson.Document;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -31,7 +16,8 @@ import org.bson.Document;
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class FrmCustomersTable extends javax.swing.JFrame {
-
+    private DefaultTableModel modelo;
+    int contador=0;
     /**
      * Creates new form FrmCustomers
      */
@@ -40,9 +26,32 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
+        CargarInterfaz();
+        CargarDatos();
         
     }
 
+    public void CargarInterfaz(){
+        String datos[][]={};
+        String columnna[]={"Email","Full Name","Cellphone","Type","Offter"};
+        modelo= new DefaultTableModel(datos,columnna);
+        tblCustomers.setModel(modelo);
+        
+    }
+    
+    public void CargarDatos(){
+        Customer c;
+        for(int i = 0;i<FrmCustomer.contenedor.size();i++){
+            c=(Customer)FrmCustomer.contenedor.get(i);
+            modelo.insertRow(contador, new Object[]{});
+            modelo.setValueAt(c.getEmail(), contador, 0);
+            modelo.setValueAt(c.getFullName(), contador, 1);
+            modelo.setValueAt(c.getCellPhone(), contador, 2);
+            modelo.setValueAt(c.getType(), contador, 3);
+            modelo.setValueAt(c.getDiscount(), contador, 4);
+
+        }
+    }
     
     @Override
         public Image getIconImage(){

@@ -1,10 +1,11 @@
-package ec.edu.espe.fruitApp.view;
+package ec.edu.espe.FruitApp.view;
 
 import ec.edu.espe.FruitApp.controller.ConexionMongoDBWorker;
 import ec.edu.espe.fruitApp.controller.RegisterController;
 import ec.edu.espe.fruitApp.model.Worker;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.LinkedList;
 import javax.swing.JFrame;
 
 /**
@@ -16,6 +17,9 @@ public class FrmWorker extends javax.swing.JFrame {
     /**
      * Creates new form FrmRegister
      */
+   
+    public static LinkedList contenedor= new LinkedList();
+    public int buscar;
     public FrmWorker() {
         initComponents();
         setTitle("FRUIT APP");

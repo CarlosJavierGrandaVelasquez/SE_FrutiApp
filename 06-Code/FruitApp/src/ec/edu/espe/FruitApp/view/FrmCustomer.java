@@ -1,4 +1,4 @@
-package ec.edu.espe.fruitApp.view;
+package ec.edu.espe.FruitApp.view;
 
 import ec.edu.espe.FruitApp.controller.ConexionMongoDBCustomer;
 import ec.edu.espe.FruitApp.view.FrmCustomersTable;
@@ -6,6 +6,7 @@ import ec.edu.espe.fruitApp.controller.CustomerController;
 import ec.edu.espe.fruitApp.model.Customer;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.LinkedList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -17,6 +18,8 @@ import javax.swing.JOptionPane;
  */
 public class FrmCustomer extends javax.swing.JFrame {
 
+    public static LinkedList contenedor= new LinkedList();
+    public int buscar;
     /**
      * Creates new form FrmCustomer
      */
@@ -294,6 +297,8 @@ public class FrmCustomer extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Select type");
         }
         
+        customer=new Customer(email, fullName, cellPhone, type, offer);
+        contenedor.add(customer);
        
     }//GEN-LAST:event_btnRegisterActionPerformed
 

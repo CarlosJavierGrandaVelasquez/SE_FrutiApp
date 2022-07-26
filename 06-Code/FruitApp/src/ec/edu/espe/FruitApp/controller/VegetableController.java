@@ -1,7 +1,7 @@
 package ec.edu.espe.fruitApp.controller;
 
 import ec.edu.espe.fruitApp.model.Vegetable;
-import ec.edu.espe.fruitApp.view.FrmVegetable;
+import ec.edu.espe.FruitApp.view.FrmVegetable;
 import javax.swing.JOptionPane;
 
 /**
