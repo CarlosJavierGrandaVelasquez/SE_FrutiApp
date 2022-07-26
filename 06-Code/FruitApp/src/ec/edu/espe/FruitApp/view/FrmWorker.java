@@ -266,6 +266,9 @@ public class FrmWorker extends javax.swing.JFrame {
         lblIdError.setText("");
         lblNameError.setText("");
         
+        register=new Worker(name, code, id);
+        contenedor.add(register);
+        
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyPressed

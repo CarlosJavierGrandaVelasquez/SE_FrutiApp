@@ -1,6 +1,6 @@
 package ec.edu.espe.FruitApp.view;
 
-import ec.edu.espe.FruitApp.view.FrmAppMenu;
+import ec.edu.espe.fruitApp.model.Vegetable;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Carlos Granda,Jose Imbaquinga, Roony Ibarra, DCCO-ESPE, Syntax Error
  */
 public class FrmVegetablesTable extends javax.swing.JFrame {
-    private DefaultTableModel modelo;
+private DefaultTableModel modelo;
     int contador=0;
     /**
      * Creates new form FrmVegetables
@@ -25,7 +25,27 @@ public class FrmVegetablesTable extends javax.swing.JFrame {
         CargarInterfaz();
         CargarDatos();
     }
+     public void CargarInterfaz(){
+        String datos[][]={};
+        String columnna[]={"Name Fruit","Texture","Quantity","Weight","Cost"};
+        modelo= new DefaultTableModel(datos,columnna);
+        tblVegetables.setModel(modelo);
+        
+    }
+    
+    
+    public void CargarDatos(){
+        Vegetable vegetable;
+        for(int i = 0;i<FrmFruit.contenedor.size();i++){
+            vegetable=(Vegetable)FrmVegetable.contenedor.get(i);
+            modelo.insertRow(contador, new Object[]{});
+            modelo.setValueAt(vegetable.getName(), contador, 0);
+            modelo.setValueAt(vegetable.getTexture(), contador, 1);
+            modelo.setValueAt(vegetable.getQuantity(), contador, 2);
+            modelo.setValueAt(vegetable.getCost(), contador, 3);
 
+        }
+    }
     @Override
         public Image getIconImage(){
             Image retValue=Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagen/Simbolo.png"));
