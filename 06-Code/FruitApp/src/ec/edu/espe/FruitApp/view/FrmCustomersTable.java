@@ -26,12 +26,12 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         setTitle("FRUIT APP");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
-        CargarInterfaz();
-        CargarDatos();
+        LoadInterface();
+        LoadData();
         
     }
 
-    public void CargarInterfaz(){
+    public void LoadInterface(){
         String datos[][]={};
         String columnna[]={"Email","Full Name","Cellphone","Type","Offter"};
         modelo= new DefaultTableModel(datos,columnna);
@@ -39,7 +39,7 @@ public class FrmCustomersTable extends javax.swing.JFrame {
         
     }
     
-    public void CargarDatos(){
+    public void LoadData(){
         Customer c;
         for(int i = 0;i<FrmCustomer.contenedor.size();i++){
             c=(Customer)FrmCustomer.contenedor.get(i);

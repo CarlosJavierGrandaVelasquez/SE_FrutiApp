@@ -23,8 +23,8 @@ public class FrmWorkers extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
         setLocationRelativeTo(null);
-        CargarInterfaz();
-        CargarDatos();
+        LoadInterface();
+        LoadDate();
     }
 
     @Override
@@ -127,7 +127,7 @@ public class FrmWorkers extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnReturnActionPerformed
     
-    public void CargarInterfaz(){
+    public void LoadInterface(){
         String datos[][]={};
         String columnna[]={"Name ","Code","Id"};
         modelo= new DefaultTableModel(datos,columnna);
@@ -136,7 +136,7 @@ public class FrmWorkers extends javax.swing.JFrame {
     }
     
     
-    public void CargarDatos(){
+    public void LoadDate(){
         Worker  worker;
         for(int i = 0;i<FrmWorker.contenedor.size();i++){
             worker=(Worker)FrmVegetable.contenedor.get(i);

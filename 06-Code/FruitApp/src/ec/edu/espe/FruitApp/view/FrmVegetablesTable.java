@@ -22,10 +22,10 @@ private DefaultTableModel modelo;
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
         setLocationRelativeTo(null);
-        CargarInterfaz();
-        CargarDatos();
+        LoadInterface();
+        LoadData();
     }
-     public void CargarInterfaz(){
+     public void LoadInterface(){
         String datos[][]={};
         String columnna[]={"Name Fruit","Texture","Quantity","Weight","Cost"};
         modelo= new DefaultTableModel(datos,columnna);
@@ -34,7 +34,7 @@ private DefaultTableModel modelo;
     }
     
     
-    public void CargarDatos(){
+    public void LoadData(){
         Vegetable vegetable;
         for(int i = 0;i<FrmVegetable.contenedor.size();i++){
             vegetable=(Vegetable)FrmVegetable.contenedor.get(i);

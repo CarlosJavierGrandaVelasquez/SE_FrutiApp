@@ -23,10 +23,10 @@ public class FrmFruits extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setIconImage(getIconImage());
         setLocationRelativeTo(null);
-        CargarInterfaz();
-        CargarDatos();
+        LoadInterface();
+        LoadData();
     }
-    public void CargarInterfaz(){
+    public void LoadInterface(){
         String datos[][]={};
         String columnna[]={"Name Fruit","Texture","Quantity","Weight","Cost"};
         modelo= new DefaultTableModel(datos,columnna);
@@ -35,7 +35,7 @@ public class FrmFruits extends javax.swing.JFrame {
     }
     
     
-    public void CargarDatos(){
+    public void LoadData(){
         Fruit fruit;
         for(int i = 0;i<FrmFruit.contenedor.size();i++){
             fruit=(Fruit)FrmFruit.contenedor.get(i);
