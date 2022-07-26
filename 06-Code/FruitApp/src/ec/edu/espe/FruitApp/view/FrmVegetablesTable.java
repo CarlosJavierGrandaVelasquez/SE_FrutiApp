@@ -36,7 +36,7 @@ private DefaultTableModel modelo;
     
     public void CargarDatos(){
         Vegetable vegetable;
-        for(int i = 0;i<FrmFruit.contenedor.size();i++){
+        for(int i = 0;i<FrmVegetable.contenedor.size();i++){
             vegetable=(Vegetable)FrmVegetable.contenedor.get(i);
             modelo.insertRow(contador, new Object[]{});
             modelo.setValueAt(vegetable.getName(), contador, 0);

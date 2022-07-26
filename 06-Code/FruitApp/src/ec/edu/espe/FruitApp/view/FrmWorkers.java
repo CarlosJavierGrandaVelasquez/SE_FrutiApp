@@ -1,6 +1,7 @@
 
 package ec.edu.espe.FruitApp.view;
 
+import ec.edu.espe.fruitApp.model.Worker;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
@@ -125,7 +126,27 @@ public class FrmWorkers extends javax.swing.JFrame {
         am.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnReturnActionPerformed
+    
+    public void CargarInterfaz(){
+        String datos[][]={};
+        String columnna[]={"Name ","Code","Id"};
+        modelo= new DefaultTableModel(datos,columnna);
+        tblWorkers.setModel(modelo);
+        
+    }
+    
+    
+    public void CargarDatos(){
+        Worker  worker;
+        for(int i = 0;i<FrmWorker.contenedor.size();i++){
+            worker=(Worker)FrmVegetable.contenedor.get(i);
+            modelo.insertRow(contador, new Object[]{});
+            modelo.setValueAt(worker.getName(), contador, 0);
+            modelo.setValueAt(worker.getCode(), contador, 1);
+            modelo.setValueAt(worker.getId(), contador, 2);
 
+        }
+    }
     /**
      * @param args the command line arguments
      */
